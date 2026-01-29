@@ -1,0 +1,128 @@
+/* ----- HEADER - CLASES GLOBALES----- */
+
+
+header {
+  background-color: #131315;
+  font-family: 'Orkney-Regular';
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  border-bottom: 1px solid #676767;
+  height: 70px; 
+  position: fixed; /* Header flotante */
+  top: 0;        
+  left: 0;         
+  width: 100%;     
+  z-index: 1000;
+}
+
+.header-left,
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* espacio entre iconos */
+  height: 100%;
+}
+
+.header-left img,
+.header-right img {
+  height: 22px; /* tamaño de los iconos */
+  width: 22px;
+  cursor: pointer;
+}
+
+.header-left img:hover,
+.header-right img:hover {
+  filter: brightness(1.2);
+  transition: 0.2s;
+}
+
+.header-left a,
+.header-right a,
+.header-center a {
+  display: flex;
+}
+
+
+/* ----- CENTER ----- */
+.header-center {
+  display: flex;
+  justify-content: center;
+  flex: 1; /* ocupa todo el espacio intermedio */
+}
+
+.logo {
+  height: 45px;
+  cursor: pointer;
+}
+
+/* ----- RIGHT ----- */
+
+
+.user-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px; /* espacio entre avatar y nombre */
+  cursor: pointer;
+  /* top: 1px; */
+}
+
+.user-section a {
+  display:flex;
+}
+
+.username {
+  color: #edeff1;
+  font-size: 0.95rem;
+  margin: 0 10px; 
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  position: relative;
+  top: 2.5px; /* pequeño ajuste visual si aún se ve desplazado */
+}
+
+
+/* ------ DESPLEGABLE ----- */
+
+
+.user-menu {
+  position: absolute;
+  top: 100%; /* Debajo de user-section */
+  right: 0;
+  background-color: #11141a;
+  border: 1px solid #676767;
+  border-radius: 6px;
+  padding: 10px 0;
+  width: 150px;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  z-index: 100;
+}
+
+/* Profile, Settings & Logout */
+.user-menu a {   
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 10px 15px;
+  font-size: 14px; /* 14.5px equivale a 0.9rem aproximadamente */
+  color: #edeff1;
+  transition: background 0.2s;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.user-menu a:hover {
+  background-color: #0a0d0f;
+  cursor: pointer;
+}
+
+/* Mostrar desplegable */
+.user-section:hover .user-menu,
+.user-menu:hover {
+  display: flex;
+}

@@ -1,0 +1,229 @@
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, auto);
+  gap: 30px;
+  padding: 20px;
+}
+
+.heading {
+  background-size: cover;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ECDFCC;
+}
+
+.heading h1 {
+  font-size: 2.5rem;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.section {
+  padding: 40px 30px;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+  color: #edeff1;
+  font-size: 1.5rem;
+}
+
+.covers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Incrementado min-width para efecto del vinilo */
+  gap: 40px; /* Gap para prevenir que el vinilo sobresalga */
+}
+
+/* ----- ALBUM CARD STYLES ----- */
+
+.album-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  transition: z-index 0s linear 0.1s;
+}
+
+.album-card:hover {
+  z-index: 50;
+  transition-delay: 0s;
+}
+
+.album-wrapper {
+  position: relative;
+  width: 70%;
+  aspect-ratio: 1 / 1;
+  z-index: 10; /* z-index base */
+}
+
+/* Vinilo: animación */
+.vinyl-disk {
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  border-radius: 50%;
+  z-index: 1;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); /* Animación desplegable */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vinyl-disk img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: spin 4s linear infinite; /* Animación: vinilo gira */
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.album-card:hover .vinyl-disk {
+  transform: translateX(50%); /* Slide out half way */
+}
+
+/* Image Container */
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 5; 
+  border-radius: 4px; 
+  background-color: #10161c;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.album-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay Info */
+.album-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  color: #ECDFCC;
+}
+
+.album-wrapper:hover .album-overlay {
+  opacity: 1;
+}
+
+.overlay-song {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 10px;
+  margin-bottom: 5px; /* Espacio entre canción y artista */
+}
+
+.overlay-artist {
+  font-size: 1rem;
+  color: #a0a0a0;
+}
+
+.overlay-year {
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: auto;
+  margin-bottom: 10px;
+}
+
+/* Minireproductor */
+.album-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 5px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  color: #ECDFCC;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background 0.2s, color 0.2s;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.play-btn {
+  font-size: 1.4rem;
+}
+
+
+/* ----- OTHER CARDS ----- */
+
+.grid-basic {
+  display: grid;
+  gap: 20px;
+}
+
+.card {
+  background-color: #10161c;
+  border-radius: 8px;
+  padding: 15px;
+  color: #ECDFCC;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: #edeff1;
+}
+
+.card p {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.deezer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.deezer-player {
+  display: block;
+  max-width: 500px; 
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #2c3440;
+}
