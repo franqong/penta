@@ -1,5 +1,13 @@
-![Penta Icon](frontend/public/assets/main/favicon-dark.png) # Penta
-![Penta](frontend/public/assets/main/penta.png) 
+<!--
+<h1 align="left">
+  <img src="frontend/public/assets/main/favicon-dark.png" width="30" height="30" style="vertical-align: middle;">
+  Penta
+</h1>
+-->
+
+<p align="center">
+  <img src="frontend/public/assets/main/penta.png" width="200" alt="Penta">
+</p>
 
 Penta is a social platform designed for music enthusiasts to discover, discuss, and share the music they love. It provides a dedicated space for fans, critics, and artists to connect through their shared passion for music.
 
@@ -24,8 +32,8 @@ Penta aims to grow into a comprehensive cultural hub. We plan to introduce curat
 Penta is being built with a modern and robust technology stack:
 
 *   **Frontend:** [React](https://react.dev/) and [Vite](https://vitejs.dev/)
-*   **Backend:** A Node.js backend is currently under development to support our growing list of features.
+*   **Backend:** A [Node.js](https://nodejs.org/) backend is currently under development to support our growing list of features.
 
 ---
 
-We are excited to build a community where music can be explored and celebrated. Welcome to Penta.
+We are excited to build a community where music can be explored and celebrated. Welcome to Penta!
