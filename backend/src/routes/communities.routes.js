@@ -14,18 +14,18 @@ import {
 
 const router = Router();
 
-router.get("/communities", getCommunities);
-router.get("/communities/:id", getCommunity);
+router.get("/", getCommunities);
+router.get("/:id", getCommunity);
 router.post(
-  "/communities",
+  "/",
   validateSchema(createCommunitySchema),
   createCommunity
 );
 router.put(
-  "/communities/:id",
+  "/:id",
   validateSchema(updateCommunitySchema),
   updateCommunity
 );
-router.delete("/communities/:id", deleteCommunity);
+router.delete("/:id", deleteCommunity);
 
 export default router;
