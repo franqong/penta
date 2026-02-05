@@ -1,8 +1,8 @@
-import "./home.css";
-import AlbumCard from "../components/albumcard.jsx";
-import ReviewCard from "../components/reviewcard.jsx";
-import CommunityCard from "../components/communitycard.jsx";
-import StatCard from "../components/statcard.jsx";
+import "./Home.css";
+import AlbumCard from "../components/AlbumCard.jsx";
+import ReviewCard from "../components/ReviewCard.jsx";
+import CommunityCard from "../components/CommunityCard.jsx";
+import StatCard from "../components/StatCard.jsx";
 
 function Home() {
   return (
