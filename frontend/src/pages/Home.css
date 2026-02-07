@@ -8,7 +8,7 @@
 
 .heading {
   background-size: cover;
-  height: 400px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,7 +17,7 @@
 }
 
 .heading h1 {
-  font-size: 2.5rem;
+  font-size: 1.9rem;
   padding: 20px;
   border-radius: 8px;
 }
@@ -29,7 +29,7 @@
 .section h2 {
   margin-bottom: 20px;
   color: #edeff1;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .covers-grid {
