@@ -8,16 +8,24 @@ import Settings from "./pages/Settings.jsx";
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-      <main className="main-content"></main>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/settings" element={<Settings />} />
-      </Routes>
-      <Footer />
+      <div className="page-wrapper">
+        <div className="bg-top" />
+
+        <Header />
+
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/settings" element={<Settings />} />
+          </Routes>
+        </main>
+
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 }
+
 
 export default App;
