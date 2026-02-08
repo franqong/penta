@@ -8,9 +8,7 @@ import Settings from "./pages/Settings.jsx";
 function App() {
   return (
     <BrowserRouter>
-      <div className="page-wrapper">
-        <div className="bg-top" />
-
+      <>
         <Header />
 
         <main className="main-content">
@@ -22,10 +20,11 @@ function App() {
         </main>
 
         <Footer />
-      </div>
+      </>
     </BrowserRouter>
   );
 }
+
 
 
 export default App;
