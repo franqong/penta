@@ -57,6 +57,12 @@ body {
   background-image:
     linear-gradient(#515151, #515151), url("/assets/backgrounds/darkdenim.png");
   background-blend-mode: overlay;
+
+  /*background:
+    linear-gradient(to bottom, #0b0e13, #000000),
+    url('/assets/backgrounds/background.png');
+  background-repeat: no-repeat, repeat;
+  background-size: cover, auto;*/
 }
 
 a {
