@@ -53,7 +53,7 @@
 
 body {
   font-family: "TiemposHeadline-Regular", sans-serif;
-  background-color: #191d24; /* alternativa a flick generado por gradiente: #0b0e13 */
+  background-color: #1c2129; /* alternativa a flick generado por gradiente: #0b0e13 */
   background-image:
     linear-gradient(#515151, #515151), url("/assets/backgrounds/darkdenim.png");
   background-blend-mode: overlay;
