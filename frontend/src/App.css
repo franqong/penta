@@ -13,15 +13,8 @@
 }
 
 @font-face {
-  font-family: "GraphicWeb-Regular";
-  src: url("/assets/fonts/graphic-web-regular.ttf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Orkney-Regular";
-  src: url("/assets/fonts/Orkney-Regular.otf") format("opentype");
+  font-family: "Libre Franklin";
+  src: url("/assets/fonts/LibreFranklin-VariableFont_wght.ttf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
