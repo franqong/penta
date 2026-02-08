@@ -10,7 +10,7 @@ header {
   align-items: center;
   border-bottom: 1px solid #676767;
   height: 70px; 
-  position: fixed; /* Header flotante */
+  position: sticky; /* Header flotante */
   top: 0;        
   left: 0;         
   width: 100%;     
