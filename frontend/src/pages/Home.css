@@ -34,8 +34,9 @@
 
 .covers-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Incrementado min-width para efecto del vinilo */
-  gap: 40px; /* Gap para prevenir que el vinilo sobresalga */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-items: start;
 }
 
 /* ----- ALBUM CARD STYLES ----- */
@@ -43,7 +44,7 @@
 .album-card {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   gap: 10px;
   position: relative;
   transition: z-index 0s linear 0.1s;
@@ -56,9 +57,23 @@
 
 .album-wrapper {
   position: relative;
-  width: 70%;
+  width: 100%;
+  max-width: 150px;
+  margin: 0 auto;
   aspect-ratio: 1 / 1;
   z-index: 10; /* z-index base */
+}
+
+@media (max-width: 1100px) {
+  .covers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .covers-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Vinilo: animación */
@@ -90,7 +105,7 @@
 }
 
 .album-card:hover .vinyl-disk {
-  transform: translateX(50%); /* Slide out half way */
+  transform: translateX(40%); /* Slide out half way */
 }
 
 /* Image Container */
@@ -137,21 +152,21 @@
 
 .overlay-song {
   font-weight: bold;
-  font-size: 1.1rem;
-  margin-top: 10px;
+  font-size: 0.95rem;
+  margin-top: -10px;
   margin-bottom: 5px; /* Espacio entre canción y artista */
 }
 
 .overlay-artist {
-  font-size: 1rem;
+  font-size: 0.85rem;
   color: #a0a0a0;
 }
 
 .overlay-year {
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   color: #888;
   margin-top: auto;
-  margin-bottom: 10px;
+  margin-bottom: -10px;
 }
 
 /* Minireproductor */
@@ -167,13 +182,13 @@
   background: none;
   border: none;
   color: #ECDFCC;
-  font-size: 1.2rem;
+  font-size: 1rem;
   cursor: pointer;
   padding: 5px;
   border-radius: 50%;
   transition: background 0.2s, color 0.2s;
-  width: 35px;
-  height: 35px;
+  width: 28px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -185,7 +200,7 @@
 }
 
 .play-btn {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
 }
 
 
