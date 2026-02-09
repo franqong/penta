@@ -10,6 +10,7 @@ header {
   align-items: center;
   border-bottom: 1px solid #676767;
   height: 70px; 
+  transition: all 0.3s ease;
   position: sticky; /* Header flotante */
   top: 0;        
   left: 0;         
@@ -30,6 +31,7 @@ header {
   height: 22px; /* tamaño de los iconos */
   width: 22px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .header-left img:hover,
@@ -44,8 +46,31 @@ header {
   display: flex;
 }
 
+/* HEADER REDUCIDO */
+
+
+header.shrink {
+  height: 50px;
+  padding: 5px 30px;
+}
+
+header.shrink .logo {
+  height: 30px;
+}
+
+header.shrink .username {
+  font-size: 0.85rem;
+}
+
+header.shrink .header-left img,
+header.shrink .header-right img {
+  height: 18px;
+  width: 18px;
+}
 
 /* ----- CENTER ----- */
+
+
 .header-center {
   display: flex;
   justify-content: center;
@@ -55,6 +80,7 @@ header {
 .logo {
   height: 45px;
   cursor: pointer;
+  transition: height 0.3s ease;
 }
 
 /* ----- RIGHT ----- */
@@ -103,6 +129,7 @@ header {
 }
 
 /* Profile, Settings & Logout */
+
 .user-menu a {   
   display: block;
   width: 100%;
@@ -121,6 +148,7 @@ header {
 }
 
 /* Mostrar desplegable */
+
 .user-section:hover .user-menu,
 .user-menu:hover {
   display: flex;

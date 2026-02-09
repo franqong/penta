@@ -1,9 +1,28 @@
+import { useEffect, useState } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 
 function Header() {
+  const [shrink, setShrink] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+
+      if (!shrink && scrollY > 80) {
+        setShrink(true);
+      } 
+      else if (shrink && scrollY < 40) {
+        setShrink(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [shrink]);
+
   return (
-    <header>
+    <header className={shrink ? "shrink" : ""}>
 
       {/* ----- LEFT ------ */}
       <div className="header-left">
