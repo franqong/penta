@@ -69,3 +69,33 @@ a {
 a:hover {
   color: #ecdfcc;
 }
+
+/* SCROLLBAR PERSONALIZADO */
+
+html {
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(236, 223, 204, 0.25) transparent;
+}
+
+/* Scrollbar general */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Fondo de la barra */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Barra draggable */
+::-webkit-scrollbar-thumb {
+  background: rgba(236, 223, 204, 0.25); /* tu color #ECDFCC en alpha */
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+/* Hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(236, 223, 204, 0.45);
+}
