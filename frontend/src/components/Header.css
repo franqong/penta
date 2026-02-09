@@ -66,7 +66,7 @@ header {
   align-items: center;
   gap: 6px; /* espacio entre avatar y nombre */
   cursor: pointer;
-  /* top: 1px; */
+  /* top: 1px; */ /* AJUSTAR ESPACIO SUPERIOR EN CASO DE QUE NO SE PUEDA */
 }
 
 .user-section a {
@@ -76,12 +76,11 @@ header {
 .username {
   color: #edeff1;
   font-size: 0.95rem;
-  margin: 0 10px; 
+  font-weight: 650;
+  margin: 5px; 
   display: flex;
   align-items: center;
-  line-height: 1;
   position: relative;
-  top: 2.5px; /* pequeño ajuste visual si aún se ve desplazado */
 }
 
 
