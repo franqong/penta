@@ -1,20 +1,22 @@
 /* ----- HEADER - CLASES GLOBALES----- */
 
-
 header {
   background-color: #0a0c10;
-  font-family: 'Libre Franklin';
+  font-family: "Libre Franklin";
   padding: 10px 30px;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #676767;
-  height: 70px; 
-  transition: all 0.3s ease;
+  height: 70px;
+  transition:
+    height 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.3s ease;
   position: sticky; /* Header flotante */
-  top: 0;        
-  left: 0;         
-  width: 100%;     
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
 }
 
@@ -31,13 +33,15 @@ header {
   height: 22px; /* tamaño de los iconos */
   width: 22px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition:
+    height 0.25s ease,
+    width 0.25s ease,
+    filter 0.2s ease;
 }
 
 .header-left img:hover,
 .header-right img:hover {
   filter: brightness(1.2);
-  transition: 0.2s;
 }
 
 .header-left a,
@@ -47,7 +51,6 @@ header {
 }
 
 /* HEADER REDUCIDO */
-
 
 header.shrink {
   height: 50px;
@@ -70,7 +73,6 @@ header.shrink .header-right img {
 
 /* ----- CENTER ----- */
 
-
 .header-center {
   display: flex;
   justify-content: center;
@@ -80,11 +82,10 @@ header.shrink .header-right img {
 .logo {
   height: 45px;
   cursor: pointer;
-  transition: height 0.3s ease;
+  transition: height 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ----- RIGHT ----- */
-
 
 .user-section {
   position: relative;
@@ -96,22 +97,21 @@ header.shrink .header-right img {
 }
 
 .user-section a {
-  display:flex;
+  display: flex;
 }
 
 .username {
   color: #edeff1;
   font-size: 0.95rem;
   font-weight: 650;
-  margin: 5px; 
+  margin: 5px;
   display: flex;
   align-items: center;
   position: relative;
+  transition: font-size 0.25s ease;
 }
 
-
 /* ------ DESPLEGABLE ----- */
-
 
 .user-menu {
   position: absolute;
@@ -124,20 +124,20 @@ header.shrink .header-right img {
   width: 150px;
   display: none;
   flex-direction: column;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   z-index: 100;
 }
 
 /* Profile, Settings & Logout */
 
-.user-menu a {   
+.user-menu a {
   display: block;
   width: 100%;
   margin: 0;
   padding: 10px 15px;
   font-size: 14px; /* 14.5px equivale a 0.9rem aproximadamente */
   color: #edeff1;
-  transition: background 0.2s;
+  transition: background-color 0.2s ease;
   text-decoration: none;
   box-sizing: border-box;
 }

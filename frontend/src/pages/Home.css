@@ -105,7 +105,7 @@
 }
 
 .album-card:hover .vinyl-disk {
-  transform: translateX(40%); /* Slide out half way */
+  transform: translateX(45%); /* Cuánto muestra el vino al desplegarse */
 }
 
 /* Image Container */
