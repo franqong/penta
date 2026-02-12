@@ -35,9 +35,11 @@
 
 .covers-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(150px, 1fr));
-  gap: clamp(40px, 4.5vw, 60px); /* a partir de 4.4vw no crece mas */
-  justify-items: start;
+  /* Esto obliga a que si no entran 3 de 150px + el gap, bajen sí o sí */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+  gap: clamp(40px, 4.5vw, 60px);
+  /* El secreto: este padding es el "colchón" para el vinilo del último cover */
+  padding-right: 70px; 
 }
 
 /* ----- ALBUM CARD STYLES ----- */
@@ -60,9 +62,8 @@
   position: relative;
   width: 100%;
   max-width: 150px;
-  margin: 0 auto;
-  aspect-ratio: 1 / 1;
-  z-index: 10; /* z-index base */
+  /* Eliminá cualquier overflow: hidden de acá si es que lo agregaste */
+  overflow: visible; 
 }
 
 @media (max-width: 1100px) {
@@ -91,6 +92,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: -1;
 }
 
 .vinyl-disk img {
