@@ -1,26 +1,18 @@
 import { useNavigate } from 'react-router-dom';
 import vinylIcon from '../assets/icons/vinyl.png';
 
-function AlbumCard({ image, song, artist, year }) {
+function AlbumCard({ image, song, artist, year, deezerId }) {
   const navigate = useNavigate();
 
   return (
     <div className="album-card">
       <div className="album-wrapper">
-        {/* Vinilo */}
-        <div 
-          className="vinyl-disk"
-          onClick={() => navigate('/album-details')} 
-          role="button"
-          tabIndex={0}
-        >
+        <div className="vinyl-disk" onClick={() => navigate('/album-details')}>
           <img src={vinylIcon} alt="Vinyl" />
         </div>
 
-        {/* Imágen del álbum & overlay */}
         <div className="image-container">
           <img src={image} alt={song} className="album-cover" />
-          
           <div className="album-overlay">
             <span className="overlay-song">{song}</span>
             <span className="overlay-artist">{artist}</span>
@@ -29,14 +21,17 @@ function AlbumCard({ image, song, artist, year }) {
         </div>
       </div>
 
-      {/* Minireproductor */}
-      <div className="album-controls">
-        <button className="icon-btn play-btn" aria-label="Play">
-          ▶
-        </button>
-        <button className="icon-btn options-btn" aria-label="Options">
-          ⋮
-        </button>
+      {/* Reproductor Real de Deezer */}
+      <div className="album-player">
+        <iframe
+          title={`deezer-player-${deezerId}`}
+          src={`https://widget.deezer.com/widget/dark/track/${deezerId}?tracklist=false`}
+          width="100%"
+          height="150"
+          frameBorder="0"
+          allowTransparency="true"
+          allow="encrypted-media; clipboard-write"
+        ></iframe>
       </div>
     </div>
   );

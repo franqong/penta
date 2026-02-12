@@ -173,37 +173,19 @@
 }
 
 /* Minireproductor */
-.album-controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding-top: 5px;
+.album-player {
+  width: 150px;
+  height: 30px;
+  overflow: hidden; /* Corta lo que sobra del iframe */
+  margin-top: -5px;
+  border-radius: 8px;
+  position: relative;
 }
 
-.icon-btn {
-  background: none;
-  border: none;
-  color: #ECDFCC;
-  font-size: 1rem;
-  cursor: pointer;
-  padding: 5px;
-  border-radius: 50%;
-  transition: background 0.2s, color 0.2s;
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.icon-btn:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #fff;
-}
-
-.play-btn {
-  font-size: 1.1rem;
+.album-player iframe {
+  position: absolute;
+  margin-top: -94px; /* Desplazamos el iframe hacia arriba dentro del contenedor */
+  /* Este valor negativo lo ajustas para centrar exactamente el botón de play */
 }
 
 

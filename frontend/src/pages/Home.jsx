@@ -24,24 +24,28 @@ function Home() {
             song="How You Remind Me"
             artist="Nickelback"
             year="2001"
+            deezerId="810179"
           />
           <AlbumCard
             image="/src/assets/covers/Core-StoneTemplePilots.jpg"
             song="Plush"
             artist="Stone Temple Pilots"
             year="1992"
+            deezerId="2794367"
           />
           <AlbumCard
             image="/src/assets/covers/HybridTheory-LinkinPark.jpg"
             song="In the End"
             artist="Linkin Park"
             year="2000"
+            deezerId="676183"
           />
           <AlbumCard
             image="/src/assets/covers/10000Days-Tool.jpg"
             song="The Pot"
             artist="Tool"
             year="2006"
+            deezerId="722078382"
           />
         </div>
       </div>
