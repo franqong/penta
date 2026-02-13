@@ -1,0 +1,144 @@
+/* MusicPlayer.css */
+
+.global-player-container {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 30px;
+  box-sizing: border-box;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.global-player-bar {
+  pointer-events: auto;
+  width: 100%;
+  max-width: 1200px;
+  height: 70px; /* Un poco más alto para balancear */
+  background-color: #10161c;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+  border: 1px solid rgba(236, 223, 204, 0.15);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+/* IZQUIERDA */
+.player-info-global {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 25%;
+}
+
+.player-info-global img {
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.global-details .song {
+  display: block;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #ECDFCC;
+}
+
+.global-details .artist {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+/* CENTRO */
+.player-center-controls {
+  flex-grow: 1;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.control-buttons {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.control-buttons button {
+  background: none;
+  border: none;
+  color: #ECDFCC;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.control-buttons button:hover { opacity: 1; }
+
+.btn-play-pause {
+  background: #ECDFCC !important;
+  color: #10161c !important;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 20px;
+  min-width: 80px;
+  opacity: 1 !important;
+}
+
+/* BARRA DE PROGRESO */
+.playback-bar-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.time {
+  font-size: 0.65rem;
+  color: #555;
+  font-family: monospace;
+}
+
+.progress-bar-bg {
+  flex-grow: 1;
+  height: 3px;
+  background: rgba(236, 223, 204, 0.1);
+  border-radius: 2px;
+  position: relative;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: #ECDFCC;
+  border-radius: 2px;
+  width: 0%; /* Visual inicial */
+}
+
+/* DERECHA */
+.player-right-options {
+  width: 25%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-player {
+  background: none;
+  border: none;
+  color: #555;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.close-player:hover { color: #ECDFCC; }

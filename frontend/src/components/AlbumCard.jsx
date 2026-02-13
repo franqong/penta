@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import vinylIcon from '../assets/icons/vinyl.png';
 
-function AlbumCard({ image, song, artist, year, deezerId }) {
+function AlbumCard({ image, song, artist, year, deezerId, onPlay }) {
   const navigate = useNavigate();
 
   return (
@@ -21,17 +21,15 @@ function AlbumCard({ image, song, artist, year, deezerId }) {
         </div>
       </div>
 
-      {/* Reproductor Real de Deezer */}
+      {/* Mini barra mejorada sin iframe */}
       <div className="album-player">
-        <iframe
-          title={`deezer-player-${deezerId}`}
-          src={`https://widget.deezer.com/widget/dark/track/${deezerId}?tracklist=false`}
-          width="100%"
-          height="150"
-          frameBorder="0"
-          allowTransparency="true"
-          allow="encrypted-media; clipboard-write"
-        ></iframe>
+        <button 
+          className="mini-btn-play" 
+          onClick={() => onPlay({ image, song, artist, deezerId })}
+        >
+          ▶
+        </button>
+        <button className="mini-btn-options">⋮</button>
       </div>
     </div>
   );

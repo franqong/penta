@@ -4,7 +4,7 @@ import ReviewCard from "../components/ReviewCard.jsx";
 import CommunityCard from "../components/CommunityCard.jsx";
 import StatCard from "../components/StatCard.jsx";
 
-function Home() {
+function Home({ onPlayTrack }) {
   return (
     <main className="home-grid">
       
@@ -25,6 +25,7 @@ function Home() {
             artist="Nickelback"
             year="2001"
             deezerId="810179"
+            onPlay={onPlayTrack}
           />
           <AlbumCard
             image="/src/assets/covers/Core-StoneTemplePilots.jpg"
@@ -32,6 +33,7 @@ function Home() {
             artist="Stone Temple Pilots"
             year="1992"
             deezerId="2794367"
+            onPlay={onPlayTrack}
           />
           <AlbumCard
             image="/src/assets/covers/HybridTheory-LinkinPark.jpg"
@@ -39,6 +41,7 @@ function Home() {
             artist="Linkin Park"
             year="2000"
             deezerId="676183"
+            onPlay={onPlayTrack}
           />
           <AlbumCard
             image="/src/assets/covers/10000Days-Tool.jpg"
@@ -46,6 +49,7 @@ function Home() {
             artist="Tool"
             year="2006"
             deezerId="722078382"
+            onPlay={onPlayTrack}
           />
         </div>
       </div>
@@ -59,24 +63,28 @@ function Home() {
             song="Blackwater Park"
             artist="Opeth"
             year="2001"
+            onPlay={onPlayTrack}
           />
           <AlbumCard
             image="/src/assets/covers/FromMarsToSirius-Gojira.jpg"
             song="From Mars to Sirius"
             artist="Gojira"
             year="2005"
+            onPlay={onPlayTrack}
           />
           <AlbumCard
             image="/src/assets/covers/AllHopeIsGone-Slipknot.jpg"
             song="All Hope Is Gone"
             artist="Slipknot"
             year="2008"
+            onPlay={onPlayTrack}
           />
           <AlbumCard
             image="/src/assets/covers/CowboysFromHell-Pantera.jpg"
             song="Cowboys from Hell"
             artist="Pantera"
             year="1990"
+            onPlay={onPlayTrack}
           />
         </div>
       </div>
@@ -109,24 +117,28 @@ function Home() {
             song="Making Love To Morgan Wallen"
             artist="Limp Bizkit"
             year="2025"
+            onPlay={onPlayTrack}
           />
           <AlbumCard
             image="/src/assets/covers/Skeleta-Ghost.jpg"
             song="Skeletá"
             artist="Ghost"
             year="2025"
+            onPlay={onPlayTrack}
           />
           <AlbumCard
             image="/src/assets/covers/TsunamiSea-Spiritbox.jpg"
             song="Tsunami Sea"
             artist="Spiritbox"
             year="2025"
+            onPlay={onPlayTrack}
           />
           <AlbumCard
             image="/src/assets/covers/Parasomnia-DreamTheater.jpg"
             song="Parasomnia"
             artist="Dream Theater"
             year="2025"
+            onPlay={onPlayTrack}
           />
         </div>
       </div>
