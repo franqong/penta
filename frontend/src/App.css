@@ -84,7 +84,7 @@ html {
   scrollbar-color: rgba(236, 223, 204, 0.25) transparent;
 }
 
-/* Scrollbar general */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }

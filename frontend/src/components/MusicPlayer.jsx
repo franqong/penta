@@ -8,7 +8,7 @@ function MusicPlayer({ track, setTrack }) {
     <div className="global-player-container">
       <div className="global-player-bar">
         
-        {/* IZQUIERDA: Info del Álbum */}
+        {/* IZQUIERDA: Info de la canción */}
         <div className="player-info-global">
           <img src={track.image} alt={track.song} />
           <div className="global-details">
@@ -17,7 +17,7 @@ function MusicPlayer({ track, setTrack }) {
           </div>
         </div>
 
-        {/* CENTRO: Controles Esenciales y Barra de Progreso */}
+        {/* CENTRO: Controles esenciales y barra de progreso */}
         <div className="player-center-controls">
           <div className="control-buttons">
             <button className="btn-skip">prev</button>

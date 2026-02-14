@@ -17,7 +17,7 @@
   pointer-events: auto;
   width: 100%;
   max-width: 1200px;
-  height: 70px; /* Un poco más alto para balancear */
+  height: 70px;
   background-color: #10161c;
   border-radius: 12px;
   display: flex;
@@ -121,7 +121,7 @@
   height: 100%;
   background: #ECDFCC;
   border-radius: 2px;
-  width: 0%; /* Visual inicial */
+  width: 0%;
 }
 
 /* DERECHA */

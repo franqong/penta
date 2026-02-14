@@ -35,10 +35,8 @@
 
 .covers-grid {
   display: grid;
-  /* Esto obliga a que si no entran 3 de 150px + el gap, bajen sí o sí */
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
   gap: clamp(40px, 4.5vw, 60px);
-  /* El secreto: este padding es el "colchón" para el vinilo del último cover */
   padding-right: 70px; 
 }
 
@@ -62,7 +60,6 @@
   position: relative;
   width: 100%;
   max-width: 150px;
-  /* Eliminá cualquier overflow: hidden de acá si es que lo agregaste */
   overflow: visible; 
 }
 
@@ -99,7 +96,7 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  animation: spin 4s linear infinite; /* Animación: vinilo gira */
+  animation: spin 4s linear infinite;
 }
 
 @keyframes spin {
@@ -108,7 +105,7 @@
 }
 
 .album-card:hover .vinyl-disk {
-  transform: translateX(45%); /* Cuánto muestra el vino al desplegarse */
+  transform: translateX(45%);
 }
 
 /* Image Container */
@@ -157,7 +154,7 @@
   font-weight: bold;
   font-size: 0.95rem;
   margin-top: -10px;
-  margin-bottom: 5px; /* Espacio entre canción y artista */
+  margin-bottom: 5px;
 }
 
 .overlay-artist {
@@ -172,7 +169,7 @@
   margin-bottom: -10px;
 }
 
-/* Minireproductor en Covers */
+/* Minireproductor*/
 .album-player {
   width: 150px;
   height: 30px;

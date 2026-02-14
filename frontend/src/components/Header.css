@@ -24,13 +24,13 @@ header {
 .header-right {
   display: flex;
   align-items: center;
-  gap: 20px; /* espacio entre iconos */
+  gap: 20px;
   height: 100%;
 }
 
 .header-left img,
 .header-right img {
-  height: 22px; /* tamaño de los iconos */
+  height: 22px;
   width: 22px;
   cursor: pointer;
   transition:
@@ -115,7 +115,7 @@ header.shrink .header-right img {
 
 .user-menu {
   position: absolute;
-  top: 100%; /* Debajo de user-section */
+  top: 100%;
   right: 0;
   background-color: #11141a;
   border: 1px solid #676767;

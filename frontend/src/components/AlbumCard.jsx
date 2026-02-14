@@ -21,7 +21,7 @@ function AlbumCard({ image, song, artist, year, deezerId, onPlay }) {
         </div>
       </div>
 
-      {/* Mini barra mejorada sin iframe */}
+      {/* Mini barra*/}
       <div className="album-player">
         <button 
           className="mini-btn-play" 
