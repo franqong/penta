@@ -2,7 +2,7 @@
 
 .music-player-placeholder {
   width: 100%;
-  height: 110px; /* Siempre ocupa su lugar, evitando que el footer se mueva al scrollear */
+  height: 25px; /* Siempre ocupa su lugar, evitando que el footer se mueva al scrollear */
   display: flex;
   justify-content: center;
   align-items: center;
