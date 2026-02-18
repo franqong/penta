@@ -13,9 +13,10 @@ function MusicPlayer({ track, setTrack }) {
       const rect = placeholderRef.current.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
 
-      // Determinamos si el lugar donde debe "aterrizar" la barra ya es visible.
-      // Usamos un pequeño margen para que el aterrizaje sea suave.
-      const isVisible = rect.top <= viewportHeight - 90;
+      // Al ser el placeholder de 30px, ajustamos el punto de encuentro.
+      // La barra flotante tiene su tope en viewport - 90px (70px alto + 20px bottom).
+      // Queremos que se acople justo cuando el placeholder entra en esa zona.
+      const isVisible = rect.top <= viewportHeight - 80;
 
       if (isVisible) {
         setDocked(true);

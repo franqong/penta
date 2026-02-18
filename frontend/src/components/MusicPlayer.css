@@ -2,13 +2,14 @@
 
 .music-player-placeholder {
   width: 100%;
-  height: 25px; /* Siempre ocupa su lugar, evitando que el footer se mueva al scrollear */
+  height: 30px; /* Espacio mínimo necesario para que el footer no baile */
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   z-index: 1000;
-  margin-top: 20px;
+  margin-top: 40px; /* Margen antes del footer */
+  margin-bottom: 20px;
 }
 
 .global-player-container {
