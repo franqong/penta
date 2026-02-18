@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import './MusicPlayer.css';
 
 function MusicPlayer({ track, setTrack }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [docked, setDocked] = useState(false);
   const placeholderRef = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,8 +16,7 @@ function MusicPlayer({ track, setTrack }) {
       const viewportHeight = window.innerHeight;
 
       // Al ser el placeholder de 30px, ajustamos el punto de encuentro.
-      // La barra flotante tiene su tope en viewport - 90px (70px alto + 20px bottom).
-      // Queremos que se acople justo cuando el placeholder entra en esa zona.
+      // La barra flotante tiene su tope en viewport - 80px.
       const isVisible = rect.top <= viewportHeight - 80;
 
       if (isVisible) {
@@ -27,12 +28,17 @@ function MusicPlayer({ track, setTrack }) {
 
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleScroll);
-    handleScroll(); // Chequeo inicial
+    
+    // Chequeo inmediato y con pequeño delay para asegurar carga de la nueva ruta
+    handleScroll();
+    const timeoutId = setTimeout(handleScroll, 100);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
+      clearTimeout(timeoutId);
     };
-  }, []);
+  }, [location, docked]);
 
   if (!track) return null;
 
