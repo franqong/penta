@@ -11,6 +11,16 @@
   box-sizing: border-box;
   z-index: 9999;
   pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* REPRODUCTOR EN EL FLUJO (Docked above footer) */
+.global-player-container.docked {
+  position: static;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding: 0 30px;
+  pointer-events: auto;
 }
 
 .global-player-bar {
@@ -26,6 +36,43 @@
   padding: 0 25px;
   border: 1px solid rgba(236, 223, 204, 0.15);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+  transition: height 0.3s ease, padding 0.3s ease;
+}
+
+/* REPRODUCTOR ENCOGIDO (Shrink) */
+.global-player-container.shrink .global-player-bar {
+  height: 50px;
+  padding: 0 20px;
+}
+
+.global-player-container.shrink .player-info-global img {
+  width: 36px;
+  height: 36px;
+}
+
+.global-player-container.shrink .global-details .song {
+  font-size: 0.8rem;
+}
+
+.global-player-container.shrink .global-details .artist {
+  font-size: 0.65rem;
+}
+
+.global-player-container.shrink .player-center-controls {
+  gap: 4px;
+}
+
+.global-player-container.shrink .control-buttons {
+  gap: 15px;
+}
+
+.global-player-container.shrink .btn-play-pause {
+  padding: 4px 12px;
+  min-width: 60px;
+}
+
+.global-player-container.shrink .progress-bar-bg {
+  height: 2px;
 }
 
 /* IZQUIERDA */
@@ -41,6 +88,7 @@
   height: 48px;
   border-radius: 4px;
   object-fit: cover;
+  transition: all 0.3s ease;
 }
 
 .global-details .song {
@@ -48,11 +96,13 @@
   font-weight: bold;
   font-size: 0.9rem;
   color: #ECDFCC;
+  transition: font-size 0.3s ease;
 }
 
 .global-details .artist {
   font-size: 0.75rem;
   color: #888;
+  transition: font-size 0.3s ease;
 }
 
 /* CENTRO */
@@ -63,12 +113,14 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  transition: all 0.3s ease;
 }
 
 .control-buttons {
   display: flex;
   align-items: center;
   gap: 30px;
+  transition: all 0.3s ease;
 }
 
 .control-buttons button {

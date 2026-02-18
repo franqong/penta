@@ -1,11 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './MusicPlayer.css';
 
 function MusicPlayer({ track, setTrack }) {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [shrink, setShrink] = useState(false);
+  const [docked, setDocked] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+
+      // SHRINK LOGIC (Matches Header exactly)
+      if (!shrink && scrollY > 80) {
+        setShrink(true);
+      } 
+      else if (shrink && scrollY < 40) {
+        setShrink(false);
+      }
+
+      // DOCKED LOGIC (Detect proximity to footer)
+      // If bottom of viewport is near bottom of document
+      if (windowHeight + scrollY >= documentHeight - 140) {
+        setDocked(true);
+      } else {
+        setDocked(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [shrink]);
+
+  if (!track) return null;
 
   return (
-    <div className="global-player-container">
+    <div className={`global-player-container ${shrink ? 'shrink' : ''} ${docked ? 'docked' : ''}`}>
       <div className="global-player-bar">
         
         {/* IZQUIERDA: Info de la canción */}

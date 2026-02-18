@@ -17,16 +17,18 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header />
-      <main className="main-content">
-        <Routes>
-          <Route path="/" element={<Home onPlayTrack={setTrack} />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/settings" element={<Settings />} />
-        </Routes>
-      </main>
-      <MusicPlayer track={track} setTrack={setTrack} />
-      <Footer />
+      <div className="app-wrapper">
+        <Header />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home onPlayTrack={setTrack} />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/settings" element={<Settings />} />
+          </Routes>
+        </main>
+        <MusicPlayer track={track} setTrack={setTrack} />
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 }
