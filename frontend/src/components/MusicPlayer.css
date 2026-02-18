@@ -1,30 +1,45 @@
 /* MusicPlayer.css */
 
+.music-player-placeholder {
+  width: 100%;
+  height: 110px; /* Siempre ocupa su lugar, evitando que el footer se mueva al scrollear */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1000;
+  margin-top: 20px;
+}
+
 .global-player-container {
-  position: fixed;
-  bottom: 20px;
-  left: 0;
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 0 30px;
   box-sizing: border-box;
-  z-index: 9999;
-  pointer-events: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0 30px;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* REPRODUCTOR EN EL FLUJO (Docked above footer) */
+/* ESTADO FLOTANTE */
+.global-player-container.floating {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none; /* Dejamos que los clicks pasen por detrás si no se toca la barra */
+}
+
+/* ESTADO ACOPLADO (Docked) */
 .global-player-container.docked {
-  position: static;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  padding: 0 30px;
+  position: relative;
+  bottom: auto;
+  left: auto;
+  padding: 0;
   pointer-events: auto;
 }
 
 .global-player-bar {
-  pointer-events: auto;
+  pointer-events: auto; /* Activamos clicks siempre para la barra */
   width: 100%;
   max-width: 1200px;
   height: 70px;
@@ -36,43 +51,15 @@
   padding: 0 25px;
   border: 1px solid rgba(236, 223, 204, 0.15);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
-  transition: height 0.3s ease, padding 0.3s ease;
+  transition: height 0.3s ease, padding 0.3s ease, border-radius 0.3s ease;
 }
 
-/* REPRODUCTOR ENCOGIDO (Shrink) */
-.global-player-container.shrink .global-player-bar {
-  height: 50px;
+/* REPRODUCTOR ENCOGIDO (Solo cuando está acoplado) */
+.global-player-container.docked .global-player-bar {
+  height: 52px;
   padding: 0 20px;
-}
-
-.global-player-container.shrink .player-info-global img {
-  width: 36px;
-  height: 36px;
-}
-
-.global-player-container.shrink .global-details .song {
-  font-size: 0.8rem;
-}
-
-.global-player-container.shrink .global-details .artist {
-  font-size: 0.65rem;
-}
-
-.global-player-container.shrink .player-center-controls {
-  gap: 4px;
-}
-
-.global-player-container.shrink .control-buttons {
-  gap: 15px;
-}
-
-.global-player-container.shrink .btn-play-pause {
-  padding: 4px 12px;
-  min-width: 60px;
-}
-
-.global-player-container.shrink .progress-bar-bg {
-  height: 2px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 /* IZQUIERDA */
@@ -88,7 +75,12 @@
   height: 48px;
   border-radius: 4px;
   object-fit: cover;
-  transition: all 0.3s ease;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.global-player-container.docked .player-info-global img {
+  width: 36px;
+  height: 36px;
 }
 
 .global-details .song {
@@ -99,10 +91,18 @@
   transition: font-size 0.3s ease;
 }
 
+.global-player-container.docked .global-details .song {
+  font-size: 0.8rem;
+}
+
 .global-details .artist {
   font-size: 0.75rem;
   color: #888;
   transition: font-size 0.3s ease;
+}
+
+.global-player-container.docked .global-details .artist {
+  font-size: 0.65rem;
 }
 
 /* CENTRO */
@@ -112,15 +112,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  transition: all 0.3s ease;
+  gap: 8px;
+  transition: gap 0.3s ease;
+}
+
+.global-player-container.docked .player-center-controls {
+  gap: 4px;
 }
 
 .control-buttons {
   display: flex;
   align-items: center;
   gap: 30px;
-  transition: all 0.3s ease;
+  transition: gap 0.3s ease;
+}
+
+.global-player-container.docked .control-buttons {
+  gap: 18px;
 }
 
 .control-buttons button {
@@ -132,10 +140,12 @@
   font-size: 0.7rem;
   letter-spacing: 1px;
   opacity: 0.7;
-  transition: opacity 0.2s;
+  transition: opacity 0.2s, font-size 0.3s ease;
 }
 
-.control-buttons button:hover { opacity: 1; }
+.global-player-container.docked .control-buttons button {
+  font-size: 0.6rem;
+}
 
 .btn-play-pause {
   background: #ECDFCC !important;
@@ -145,6 +155,12 @@
   border-radius: 20px;
   min-width: 80px;
   opacity: 1 !important;
+  transition: all 0.3s ease;
+}
+
+.global-player-container.docked .btn-play-pause {
+  padding: 4px 12px;
+  min-width: 60px;
 }
 
 /* BARRA DE PROGRESO */
@@ -167,6 +183,11 @@
   background: rgba(236, 223, 204, 0.1);
   border-radius: 2px;
   position: relative;
+  transition: height 0.3s ease;
+}
+
+.global-player-container.docked .progress-bar-bg {
+  height: 2px;
 }
 
 .progress-bar-fill {
