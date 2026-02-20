@@ -7,7 +7,7 @@ const createAccessToken = (payload) => {
   return new Promise((resolve, reject) => {
     jwt.sign(
       payload,
-      process.env.TOKEN_SECRET || "fallback_secret", // Fallback secret for safety
+      process.env.TOKEN_SECRET,
       { expiresIn: "1d" },
       (err, token) => {
         if (err) reject(err);
@@ -20,11 +20,11 @@ const createAccessToken = (payload) => {
 export const register = async (req, res, next) => {
   try {
     const newUser = await userService.createUser(req.body);
+    const token = await createAccessToken({ id: newUser.id });
+    
     res.cookie("token", token, {
       httpOnly: true,
-      // TODO: Para producción, descomenta la siguiente línea y elimina esta.
-      // secure: process.env.NODE_ENV === "production",
-      secure: false, // Temporalmente en false para testing HTTP local. ¡Revertir para producción!
+      secure: process.env.NODE_ENV === "production",
       sameSite: "strict",
     });
 
@@ -56,9 +56,7 @@ export const login = async (req, res, next) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      // TODO: Para producción, descomenta la siguiente línea y elimina esta.
-      // secure: process.env.NODE_ENV === "production",
-      secure: false, // Temporalmente en false para testing HTTP local. ¡Revertir para producción!
+      secure: process.env.NODE_ENV === "production",
       sameSite: "strict",
     });
 
