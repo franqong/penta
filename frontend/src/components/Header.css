@@ -48,6 +48,8 @@ header {
 .header-right a,
 .header-center a {
   display: flex;
+  align-items: center; /* Asegurar que el contenido del link esté centrado */
+  height: 100%;
 }
 
 /* HEADER REDUCIDO */
@@ -58,7 +60,7 @@ header.shrink {
 }
 
 header.shrink .logo {
-  height: 30px;
+  height: 35px; /* Ajustado de 30px para que no sea tan brusco */
 }
 
 header.shrink .username {

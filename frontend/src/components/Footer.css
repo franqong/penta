@@ -6,11 +6,14 @@ footer {
   font-family: 'Libre Franklin';
   border-top: 1px solid #676767;
   margin-top: 40px;
-  padding: 20px 0;
+  height: 80px;
   color: #fff;
+  display: flex;
+  align-items: center;
 }
 
 .footer-container {
+  width: 100%;
   max-width: 900px;        
   margin: 0 auto;          
   display: flex;
@@ -23,12 +26,22 @@ footer {
 /* ----- LEFT ----- */
 
 
+.footer-links {
+  display: flex;
+  align-items: center; /* Cambiado de baseline a center para alineación uniforme */
+  height: 24px; /* Altura fija que coincide con las redes sociales */
+}
+
 .footer-links a {
   margin: 0 10px;
   text-decoration: none;
   color: #edeff1;  
-  font-size: 14px; /* 14.5px equivale a 0.9rem aproximadamente */
+  font-size: 14px; 
   transition: color 0.2s ease;
+  line-height: 1; 
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .footer-links a:hover {
@@ -39,9 +52,16 @@ footer {
 /* ----- RIGHT ----- */
 
 
+.footer-socials {
+  display: flex;
+  align-items: center;
+}
+
 .footer-socials a {
   margin: 0 8px;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  height: 24px;
 }
 
 .footer-socials img {

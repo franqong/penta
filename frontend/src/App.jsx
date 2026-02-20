@@ -9,7 +9,7 @@ import MusicPlayer from "./components/MusicPlayer.jsx";
 
 function App() {
   const [track, setTrack] = useState({
-  image: "https://via.placeholder.com/45", // Imagen por defecto
+  image: "/src/assets/icons/vinyl.png", // Imagen por defecto en el reproductor
   song: "Selecciona una canción",
   artist: "Artista",
   deezerId: null

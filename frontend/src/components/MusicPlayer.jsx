@@ -4,9 +4,16 @@ import './MusicPlayer.css';
 
 function MusicPlayer({ track, setTrack }) {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [docked, setDocked] = useState(false);
+  const [isMinimized, setIsMinimized] = useState(false);
+  const [dockedByScroll, setDockedByScroll] = useState(false);
   const placeholderRef = useRef(null);
   const location = useLocation();
+
+  const docked = dockedByScroll || isMinimized;
+
+  useEffect(() => {
+    setIsMinimized(false);
+  }, [track]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,31 +21,24 @@ function MusicPlayer({ track, setTrack }) {
 
       const rect = placeholderRef.current.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
-
-      // Al ser el placeholder de 30px, ajustamos el punto de encuentro.
-      // La barra flotante tiene su tope en viewport - 80px.
       const isVisible = rect.top <= viewportHeight - 80;
 
-      if (isVisible) {
-        setDocked(true);
-      } else {
-        setDocked(false);
-      }
+      setDockedByScroll(prev => prev !== isVisible ? isVisible : prev);
     };
 
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleScroll);
     
-    // Chequeo inmediato y con pequeño delay para asegurar carga de la nueva ruta
+    // Pequeño delay para asegurar la posición tras el render
     handleScroll();
-    const timeoutId = setTimeout(handleScroll, 100);
+    const timeoutId = setTimeout(handleScroll, 50);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
       clearTimeout(timeoutId);
     };
-  }, [location, docked]);
+  }, [location]);
 
   if (!track) return null;
 
@@ -47,7 +47,7 @@ function MusicPlayer({ track, setTrack }) {
       <div className={`global-player-container ${docked ? 'docked' : 'floating'}`}>
         <div className="global-player-bar">
           
-          {/* IZQUIERDA */}
+          {/* LEFT */}
           <div className="player-info-global">
             <img src={track.image} alt={track.song} />
             <div className="global-details">
@@ -56,7 +56,7 @@ function MusicPlayer({ track, setTrack }) {
             </div>
           </div>
 
-          {/* CENTRO */}
+          {/* CENTER */}
           <div className="player-center-controls">
             <div className="control-buttons">
               <button className="btn-skip">prev</button>
@@ -78,9 +78,19 @@ function MusicPlayer({ track, setTrack }) {
             </div>
           </div>
 
-          {/* DERECHA */}
+          {/* RIGHT */}
           <div className="player-right-options">
-            <button className="close-player" onClick={() => setTrack(null)}>close</button>
+            {isMinimized ? (
+              <button className="minimize-player" onClick={() => setIsMinimized(false)}>
+                restore
+              </button>
+            ) : (
+              !dockedByScroll && (
+                <button className="minimize-player" onClick={() => setIsMinimized(true)}>
+                  minimize
+                </button>
+              )
+            )}
           </div>
 
         </div>
