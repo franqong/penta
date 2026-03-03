@@ -1,8 +1,7 @@
-import * as userService from "../services/users.service.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
+import * as userService from "../services/users.service.js";
 
-// Helper to create JWT token
 const createAccessToken = (payload) => {
   return new Promise((resolve, reject) => {
     jwt.sign(
@@ -28,7 +27,6 @@ export const register = async (req, res, next) => {
       sameSite: "strict",
     });
 
-    // Don't send password back
     const { password, ...userResponse } = newUser;
     res.status(201).json(userResponse);
   } catch (error) {
@@ -41,6 +39,7 @@ export const register = async (req, res, next) => {
 
 export const login = async (req, res, next) => {
   const { email, password } = req.body;
+
   try {
     const userFound = await userService.findUserByEmail(email);
     if (!userFound) {
@@ -60,7 +59,6 @@ export const login = async (req, res, next) => {
       sameSite: "strict",
     });
 
-    // Don't send password back
     const { password: userPassword, ...userResponse } = userFound;
     res.json(userResponse);
   } catch (error) {
@@ -77,7 +75,6 @@ export const logout = (req, res) => {
 
 export const profile = async (req, res, next) => {
   try {
-    // req.user.id should be populated by the authRequired middleware
     const user = await userService.getUser(req.user.id);
     if (!user) {
       return res.status(404).json({ message: "User not found" });

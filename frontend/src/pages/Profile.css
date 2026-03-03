@@ -1,34 +1,31 @@
 .profile-page {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 columnas */
-  grid-template-rows: repeat(3, auto); /* 3 filas */
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, auto);
   gap: 30px;
   padding: 20px;
 }
-
-/* ----- CONTENEDOR SECTION ----- */
 
 .section {
   padding: 40px 30px;
 }
 
-/* Izquierda */
+/* Profile Left */
+
 .profile-left {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-/* Imagen de perfil */
 .profile-avatar {
   width: 80px;
   height: 80px;
-  border-radius: 50%;
   border: 2px solid #ECDFCC;
+  border-radius: 50%;
   object-fit: cover;
 }
 
-/* Nombre + bio + ubicación */
 .profile-info {
   display: flex;
   flex-direction: column;
@@ -36,28 +33,23 @@
 }
 
 .profile-name {
+  color: #edeff1;
   font-size: 1.4rem;
   font-weight: bold;
-  color: #edeff1;
 }
 
 .profile-bio {
-  font-size: 0.9rem;
   color: #ECDFCC;
+  font-size: 0.9rem;
 }
 
 .profile-location {
-  font-size: 0.85rem;
   color: #ECDFCC;
+  font-size: 0.85rem;
 }
 
-/* Derecha */
-/* .profile-right {
-  display: flex;
-  align-items: center;
-} */
+/* Profile Right */
 
-/* Derecha - NUEVO */
 .profile-right {
   display: flex;
   flex-direction: column;
@@ -76,12 +68,12 @@
 }
 
 .stat-number {
+  color: #edeff1;
   font-size: 1.2rem;
   font-weight: bold;
-  color: #edeff1;
 }
 
 .stat-label {
-  font-size: 0.85rem;
   color: #ECDFCC;
+  font-size: 0.85rem;
 }

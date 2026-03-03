@@ -1,23 +1,26 @@
-/* ----- HEADER - CLASES GLOBALES----- */
-
 header {
-  background-color: #0a0c10;
-  font-family: "Libre Franklin";
-  padding: 10px 30px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #676767;
+  width: 100%;
   height: 70px;
+  padding: 10px 30px;
+  background-color: #0a0c10;
+  border-bottom: 1px solid #676767;
+  font-family: "Libre Franklin";
   transition:
     height 0.25s cubic-bezier(0.4, 0, 0.2, 1),
     padding 0.25s cubic-bezier(0.4, 0, 0.2, 1),
     background-color 0.3s ease;
-  position: sticky; /* Header flotante */
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
+}
+
+header.shrink {
+  height: 50px;
+  padding: 5px 30px;
 }
 
 .header-left,
@@ -28,10 +31,18 @@ header {
   height: 100%;
 }
 
+.header-left a,
+.header-right a,
+.header-center a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
 .header-left img,
 .header-right img {
-  height: 22px;
   width: 22px;
+  height: 22px;
   cursor: pointer;
   transition:
     height 0.25s ease,
@@ -44,41 +55,16 @@ header {
   filter: brightness(1.2);
 }
 
-.header-left a,
-.header-right a,
-.header-center a {
-  display: flex;
-  align-items: center; /* Asegurar que el contenido del link esté centrado */
-  height: 100%;
-}
-
-/* HEADER REDUCIDO */
-
-header.shrink {
-  height: 50px;
-  padding: 5px 30px;
-}
-
-header.shrink .logo {
-  height: 35px; /* Ajustado de 30px para que no sea tan brusco */
-}
-
-header.shrink .username {
-  font-size: 0.85rem;
-}
-
 header.shrink .header-left img,
 header.shrink .header-right img {
-  height: 18px;
   width: 18px;
+  height: 18px;
 }
-
-/* ----- CENTER ----- */
 
 .header-center {
   display: flex;
   justify-content: center;
-  flex: 1; /* ocupa todo el espacio intermedio */
+  flex: 1;
 }
 
 .logo {
@@ -87,15 +73,16 @@ header.shrink .header-right img {
   transition: height 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ----- RIGHT ----- */
+header.shrink .logo {
+  height: 35px;
+}
 
 .user-section {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 6px; /* espacio entre avatar y nombre */
+  gap: 6px;
   cursor: pointer;
-  /* top: 1px; */ /* AJUSTAR ESPACIO SUPERIOR EN CASO DE QUE NO SE PUEDA */
 }
 
 .user-section a {
@@ -103,55 +90,52 @@ header.shrink .header-right img {
 }
 
 .username {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 5px;
   color: #edeff1;
   font-size: 0.95rem;
   font-weight: 650;
-  margin: 5px;
-  display: flex;
-  align-items: center;
-  position: relative;
   transition: font-size 0.25s ease;
 }
 
-/* ------ DESPLEGABLE ----- */
+header.shrink .username {
+  font-size: 0.85rem;
+}
 
 .user-menu {
   position: absolute;
   top: 100%;
   right: 0;
+  z-index: 100;
+  display: none;
+  flex-direction: column;
+  width: 150px;
+  padding: 10px 0;
   background-color: #11141a;
   border: 1px solid #676767;
   border-radius: 6px;
-  padding: 10px 0;
-  width: 150px;
-  display: none;
-  flex-direction: column;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  z-index: 100;
 }
 
-/* Profile, Settings & Logout */
+.user-section:hover .user-menu,
+.user-menu:hover {
+  display: flex;
+}
 
 .user-menu a {
   display: block;
   width: 100%;
-  margin: 0;
   padding: 10px 15px;
-  font-size: 14px; /* 14.5px equivale a 0.9rem aproximadamente */
-  color: #edeff1;
-  transition: background-color 0.2s ease;
-  text-decoration: none;
   box-sizing: border-box;
+  color: #edeff1;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
 }
 
 .user-menu a:hover {
   background-color: #0a0d0f;
   cursor: pointer;
-}
-
-/* Mostrar desplegable */
-
-.user-section:hover .user-menu,
-.user-menu:hover {
-  display: flex;
 }

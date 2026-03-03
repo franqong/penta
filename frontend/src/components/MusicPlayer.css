@@ -1,25 +1,24 @@
 .music-player-placeholder {
-  width: 100%;
-  height: 52px; /* Coincide exactamente con el alto del reproductor docked */
+  position: relative;
+  z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  z-index: 1000;
+  width: 100%;
+  height: 52px;
   margin-top: 40px; 
   margin-bottom: 20px;
 }
 
 .global-player-container {
-  width: 100%;
   display: flex;
   justify-content: center;
-  box-sizing: border-box;
+  width: 100%;
   padding: 0 30px;
+  box-sizing: border-box;
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ESTADO FLOTANTE */
 .global-player-container.floating {
   position: fixed;
   bottom: 20px;
@@ -28,7 +27,6 @@
   pointer-events: none;
 }
 
-/* ESTADO ACOPLADO (Docked) */
 .global-player-container.docked {
   position: relative;
   bottom: auto;
@@ -38,22 +36,21 @@
 }
 
 .global-player-bar {
-  pointer-events: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
   width: 100%;
   max-width: 1200px;
   height: 70px;
-  background-color: #10161c;
-  border-radius: 12px;
-  display: flex;
-  align-items: stretch; /* Stretch children to full height for better alignment control */
-  justify-content: space-between;
   padding: 0 25px;
+  background-color: #10161c;
   border: 1px solid rgba(236, 223, 204, 0.15);
+  border-radius: 12px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+  pointer-events: auto;
   transition: height 0.3s ease, padding 0.3s ease, border-radius 0.3s ease;
 }
 
-/* REPRODUCTOR MINIMIZADO */
 .global-player-container.docked .global-player-bar {
   height: 52px;
   padding: 0 20px;
@@ -61,7 +58,8 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* LEFT */
+/* Info Section (Left) */
+
 .player-info-global {
   display: flex;
   align-items: center;
@@ -75,8 +73,8 @@
   height: 48px;
   border-radius: 4px;
   object-fit: cover;
-  transition: width 0.3s ease, height 0.3s ease;
   flex-shrink: 0;
+  transition: width 0.3s ease, height 0.3s ease;
 }
 
 .global-player-container.docked .player-info-global img {
@@ -88,55 +86,56 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  line-height: 1; /* Estrictamente 1 para evitar saltos de sub-píxel */
+  height: 100%;
+  line-height: 1;
   overflow: hidden;
-  height: 100%; /* Ocupar todo el alto para centrar mejor */
 }
 
 .global-details .song {
   display: block;
-  font-weight: bold;
-  font-size: 14px; /* Cambiado de 0.9rem (14.4px) a 14px exactos */
+  margin: 0 0 4px 0;
   color: #ECDFCC;
-  transition: font-size 0.3s ease;
+  font-weight: bold;
+  font-size: 14px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin: 0 0 4px 0; /* Margen fijo inferior para separar de la banda */
+  transition: font-size 0.3s ease;
 }
 
 .global-player-container.docked .global-details .song {
-  font-size: 13px;
   margin: 0 0 2px 0;
+  font-size: 13px;
 }
 
 .global-details .artist {
   display: block;
-  font-size: 12px; /* Cambiado de 0.75rem a 12px exactos */
+  margin: 0;
   color: #888;
-  transition: font-size 0.3s ease;
+  font-size: 12px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin: 0;
+  transition: font-size 0.3s ease;
 }
 
 .global-player-container.docked .global-details .artist {
   font-size: 11px;
 }
 
-/* CENTER */
+/* Controls Section (Center) */
+
 .player-center-controls {
-  flex-grow: 1;
-  max-width: 450px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: center; /* Center vertically */
+  flex-grow: 1;
+  flex-shrink: 0;
+  max-width: 450px;
+  height: 100%;
   gap: 8px;
   transition: gap 0.3s ease;
-  height: 100%;
-  flex-shrink: 0; /* Evitar que se comprima */
 }
 
 .global-player-container.docked .player-center-controls {
@@ -146,30 +145,30 @@
 .control-buttons {
   display: flex;
   align-items: center;
+  height: 36px;
   gap: 30px;
   transition: gap 0.3s ease;
-  height: 36px; /* Alto fijo para estabilizar los botones */
 }
 
 .global-player-container.docked .control-buttons {
-  gap: 18px;
   height: 28px;
+  gap: 18px;
 }
 
 .control-buttons button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: none;
   border: none;
   color: #ECDFCC;
   cursor: pointer;
-  text-transform: uppercase;
   font-size: 0.7rem;
   letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 1;
   opacity: 0.7;
   transition: opacity 0.2s, font-size 0.3s ease;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .global-player-container.docked .control-buttons button {
@@ -177,34 +176,35 @@
 }
 
 .btn-play-pause {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 80px;
+  height: 32px;
+  padding: 0 16px;
   background: #ECDFCC !important;
   color: #10161c !important;
-  font-weight: bold;
-  padding: 0 16px; /* Solo padding lateral */
   border-radius: 20px;
-  min-width: 80px;
-  height: 32px; /* Alto fijo para PLAY/PAUSE */
+  font-weight: bold;
   opacity: 1 !important;
   transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .global-player-container.docked .btn-play-pause {
+  min-width: 60px;
   height: 24px;
   padding: 0 12px;
-  min-width: 60px;
 }
 
-/* BARRA DE PROGRESO */
+/* Playback Bar */
+
 .playback-bar-container {
-  width: 100%;
   display: flex;
   align-items: center;
+  width: 100%;
+  height: 14px;
+  margin-bottom: 4px;
   gap: 12px;
-  height: 14px; /* Altura fija para estabilidad */
-  margin-bottom: 4px; /* Subir un poco la barra despegándola del fondo */
 }
 
 .global-player-container.docked .playback-bar-container {
@@ -213,20 +213,20 @@
 }
 
 .time {
-  font-size: 0.65rem;
-  color: #555;
-  font-family: monospace;
-  line-height: 1;
   display: flex;
   align-items: center;
+  color: #555;
+  font-family: monospace;
+  font-size: 0.65rem;
+  line-height: 1;
 }
 
 .progress-bar-bg {
+  position: relative;
   flex-grow: 1;
   height: 3px;
   background: rgba(236, 223, 204, 0.1);
   border-radius: 2px;
-  position: relative;
   transition: height 0.3s ease;
 }
 
@@ -235,33 +235,36 @@
 }
 
 .progress-bar-fill {
+  width: 0%;
   height: 100%;
   background: #ECDFCC;
   border-radius: 2px;
-  width: 0%;
 }
 
-/* RIGHT */
+/* Options Section (Right) */
+
 .player-right-options {
-  width: 25%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  width: 25%;
   height: 100%;
 }
 
 .minimize-player {
+  display: flex;
+  align-items: center;
+  height: 100%;
   background: none;
   border: none;
   color: #555;
-  text-transform: uppercase;
-  font-size: 11px; /* Fijado a 11px exactos */
   cursor: pointer;
+  font-size: 11px;
   letter-spacing: 1px;
+  text-transform: uppercase;
   line-height: 1;
-  display: flex;
-  align-items: center;
-  height: 100%; /* Ocupar todo el alto para centrar */
 }
 
-.minimize-player:hover { color: #ECDFCC; }
+.minimize-player:hover { 
+  color: #ECDFCC; 
+}

@@ -1,56 +1,45 @@
-/* ----- FOOTER - CLASES GLOBALES ----- */
-
-
 footer {
-  background-color: #12161c;
-  font-family: 'Libre Franklin';
-  border-top: 1px solid #676767;
-  margin-top: 40px;
-  height: 80px;
-  color: #fff;
   display: flex;
   align-items: center;
+  height: 80px;
+  margin-top: 40px;
+  background-color: #12161c;
+  border-top: 1px solid #676767;
+  color: #fff;
+  font-family: 'Libre Franklin';
 }
 
 .footer-container {
-  width: 100%;
-  max-width: 900px;        
-  margin: 0 auto;          
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
   padding: 0 20px;
 }
 
-
-/* ----- LEFT ----- */
-
-
 .footer-links {
   display: flex;
-  align-items: center; /* Cambiado de baseline a center para alineación uniforme */
-  height: 24px; /* Altura fija que coincide con las redes sociales */
+  align-items: center;
+  height: 24px;
 }
 
 .footer-links a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #edeff1;  
-  font-size: 14px; 
-  transition: color 0.2s ease;
-  line-height: 1; 
   display: flex;
   align-items: center;
   height: 100%;
+  margin: 0 10px;
+  color: #edeff1;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1;
+  transition: color 0.2s ease;
 }
 
 .footer-links a:hover {
   color: #ECDFCC;
 }
-
-
-/* ----- RIGHT ----- */
-
 
 .footer-socials {
   display: flex;
@@ -58,10 +47,10 @@ footer {
 }
 
 .footer-socials a {
-  margin: 0 8px;
   display: flex;
   align-items: center;
   height: 24px;
+  margin: 0 8px;
 }
 
 .footer-socials img {

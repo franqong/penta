@@ -9,11 +9,11 @@ import MusicPlayer from "./components/MusicPlayer.jsx";
 
 function App() {
   const [track, setTrack] = useState({
-  image: "/src/assets/icons/vinyl.png", // Imagen por defecto en el reproductor
-  song: "Selecciona una canción",
-  artist: "Artista",
-  deezerId: null
-});
+    image: "/src/assets/icons/vinyl.png",
+    song: "Selecciona una canción",
+    artist: "Artista",
+    deezerId: null
+  });
 
   return (
     <BrowserRouter>

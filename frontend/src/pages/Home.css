@@ -3,24 +3,25 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: repeat(3, auto);
   gap: 30px;
+  width: 100%;
   padding: 20px;
   box-sizing: border-box;
 }
 
 .heading {
-  background-size: cover;
-  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 200px;
+  background-size: cover;
   text-align: center;
   color: #ECDFCC;
 }
 
 .heading h1 {
-  font-size: 1.9rem;
   padding: 20px;
   border-radius: 8px;
+  font-size: 1.9rem;
 }
 
 .section {
@@ -40,14 +41,14 @@
   padding-right: 70px; 
 }
 
-/* ----- ALBUM CARD STYLES ----- */
+/* Album Card */
 
 .album-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   gap: 10px;
-  position: relative;
   transition: z-index 0s linear 0.1s;
 }
 
@@ -63,33 +64,39 @@
   overflow: visible; 
 }
 
-@media (max-width: 1100px) {
-  .covers-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.image-container {
+  position: relative;
+  z-index: 5; 
+  width: 100%;
+  height: 100%;
+  background-color: #10161c;
+  border-radius: 4px; 
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  overflow: hidden;
 }
 
-@media (max-width: 700px) {
-  .covers-grid {
-    grid-template-columns: 1fr;
-  }
+.album-cover {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* Vinilo: animación */
+/* Vinyl animation */
+
 .vinyl-disk {
   position: absolute;
   top: 5px;
+  right: 5px;
   bottom: 5px;
   left: 5px;
-  right: 5px;
-  border-radius: 50%;
-  z-index: 1;
-  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); /* Animación desplegable */
-  cursor: pointer;
+  z-index: -1;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: -1;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .vinyl-disk img {
@@ -99,51 +106,33 @@
   animation: spin 4s linear infinite;
 }
 
+.album-card:hover .vinyl-disk {
+  transform: translateX(45%);
+}
+
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
-.album-card:hover .vinyl-disk {
-  transform: translateX(45%);
-}
+/* Album Overlay */
 
-/* Image Container */
-.image-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  z-index: 5; 
-  border-radius: 4px; 
-  background-color: #10161c;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-}
-
-.album-cover {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Overlay Info */
 .album-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.85);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  width: 100%;
+  height: 100%;
   padding: 20px 10px;
+  background: rgba(0, 0, 0, 0.85);
+  color: #ECDFCC;
+  text-align: center;
   opacity: 0;
   transition: opacity 0.3s ease;
-  text-align: center;
-  color: #ECDFCC;
 }
 
 .album-wrapper:hover .album-overlay {
@@ -151,38 +140,40 @@
 }
 
 .overlay-song {
-  font-weight: bold;
-  font-size: 0.95rem;
   margin-top: -10px;
   margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 0.95rem;
 }
 
 .overlay-artist {
-  font-size: 0.85rem;
   color: #a0a0a0;
+  font-size: 0.85rem;
 }
 
 .overlay-year {
-  font-size: 0.75rem;
-  color: #888;
   margin-top: auto;
   margin-bottom: -10px;
+  color: #888;
+  font-size: 0.75rem;
 }
 
-/* Minireproductor*/
+/* Mini Player */
+
 .album-player {
-  width: 150px;
-  height: 30px;
-  background-color: #10161c;
-  margin-top: -5px;
-  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  width: 150px;
+  height: 30px;
+  margin-top: -5px;
+  background-color: #10161c;
   border: 1px solid rgba(236, 223, 204, 0.1);
+  border-radius: 8px;
 }
 
-.mini-btn-play, .mini-btn-options {
+.mini-btn-play, 
+.mini-btn-options {
   background: none;
   border: none;
   color: #ECDFCC;
@@ -190,10 +181,12 @@
   font-size: 1.1rem;
 }
 
-.mini-btn-play:hover { color: #fff; transform: scale(1.1); }
+.mini-btn-play:hover { 
+  color: #fff; 
+  transform: scale(1.1); 
+}
 
-
-/* ----- OTHER CARDS ----- */
+/* Other Cards */
 
 .grid-basic {
   display: grid;
@@ -201,9 +194,9 @@
 }
 
 .card {
+  padding: 15px;
   background-color: #10161c;
   border-radius: 8px;
-  padding: 15px;
   color: #ECDFCC;
 }
 
@@ -227,7 +220,21 @@
   display: block;
   max-width: 500px; 
   margin: 0 auto;
+  background-color: #2c3440;
   border-radius: 10px;
   overflow: hidden;
-  background-color: #2c3440;
+}
+
+/* Media Queries */
+
+@media (max-width: 1100px) {
+  .covers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .covers-grid {
+    grid-template-columns: 1fr;
+  }
 }

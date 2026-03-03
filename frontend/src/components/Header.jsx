@@ -23,8 +23,6 @@ function Header() {
 
   return (
     <header className={shrink ? "shrink" : ""}>
-
-      {/* ----- LEFT ------ */}
       <div className="header-left">
         <Link to="/songs">
           <img src="/src/assets/icons/wave-sound.png" alt="Canciones" />
@@ -37,14 +35,12 @@ function Header() {
         </Link>
       </div>
 
-      {/* ----- CENTER ----- */}
       <div className="header-center">
         <Link to="/">
           <img src="/assets/main/penta.png" alt="PENTA" className="logo" />
         </Link>
       </div>
 
-      {/* ----- RIGHT ----- */}
       <div className="header-right">
         <div className="user-section">
           <img
@@ -53,7 +49,6 @@ function Header() {
           />
           <span className="username">Franco</span>
 
-          {/* ----- DESPLEGABLE ----- */}
           <div className="user-menu">
             <Link to="/profile">Profile</Link>
             <Link to="/settings">Settings</Link>
@@ -61,7 +56,6 @@ function Header() {
           </div>
         </div>
 
-          {/* ----- SEARCH ----- */}
         <Link to="/search">
           <img
             src="/src/assets/icons/search.png"

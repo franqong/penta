@@ -21,7 +21,6 @@ export const getUser = async (id) => {
 
 export const createUser = async (userData) => {
   const { name, email, password } = userData;
-
   const hashedPassword = await bcrypt.hash(password, 10);
 
   return await prisma.user.create({
@@ -38,7 +37,6 @@ export const findUserByEmail = async (email) => {
     where: { email },
   });
 };
-
 
 export const followUser = async (followerId, followingId) => {
   return await prisma.follows.create({
