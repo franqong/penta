@@ -23,12 +23,30 @@ header.shrink {
   padding: 5px 30px;
 }
 
-.header-left,
-.header-right {
+/* LAYOUT FOR PERFECT CENTERING */
+.header-left {
   display: flex;
   align-items: center;
   gap: 20px;
   height: 100%;
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.header-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  height: 100%;
+  flex: 1;
+  justify-content: flex-end;
 }
 
 .header-left a,
@@ -39,6 +57,66 @@ header.shrink {
   height: 100%;
 }
 
+/* SEARCH BAR */
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 180px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 6px 35px 6px 15px;
+  background-color: #1a1d23;
+  border: 1px solid #454d5a;
+  border-radius: 15px;
+  color: #edeff1;
+  font-family: "Libre Franklin";
+  font-size: 0.85rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  border-color: #676767;
+  background-color: #22272e;
+}
+
+.search-icon-inside {
+  position: absolute;
+  right: 12px;
+  width: 14px !important;
+  height: 14px !important;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* BAND SECTION */
+.band-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 15px;
+  margin: -8px -15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.bandname {
+  color: #edeff1;
+  font-size: 0.95rem;
+  font-weight: 650;
+  transition: font-size 0.25s ease;
+}
+
+header.shrink .bandname {
+  font-size: 0.85rem;
+}
+
+/* IMAGES & LOGO */
 .header-left img,
 .header-right img {
   width: 22px;
@@ -61,12 +139,6 @@ header.shrink .header-right img {
   height: 18px;
 }
 
-.header-center {
-  display: flex;
-  justify-content: center;
-  flex: 1;
-}
-
 .logo {
   height: 45px;
   cursor: pointer;
@@ -77,12 +149,26 @@ header.shrink .logo {
   height: 35px;
 }
 
+/* USER SECTION & MENU */
 .user-section {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 12px;
+  padding: 8px 20px;
+  margin: -8px -20px;
   cursor: pointer;
+  z-index: 1001;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  border-radius: 6px;
+}
+
+.user-section:hover {
+  background-color: #11141a;
+  border-color: #676767;
+  border-bottom-color: transparent;
+  border-radius: 10px 10px 0 0;
 }
 
 .user-section a {
@@ -93,7 +179,6 @@ header.shrink .logo {
   position: relative;
   display: flex;
   align-items: center;
-  margin: 5px;
   color: #edeff1;
   font-size: 0.95rem;
   font-weight: 650;
@@ -107,27 +192,36 @@ header.shrink .username {
 .user-menu {
   position: absolute;
   top: 100%;
-  right: 0;
-  z-index: 100;
-  display: none;
+  left: -1px;
+  right: -1px;
+  z-index: 1000;
+  display: flex; /* Cambiado de none a flex para manejar transición */
   flex-direction: column;
-  width: 150px;
-  padding: 10px 0;
   background-color: #11141a;
   border: 1px solid #676767;
-  border-radius: 6px;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  
+  /* TRANSICIÓN SINCRONIZADA */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  overflow: hidden; /* FIX: Evita que el hover de Logout se salga del borde redondeado */
 }
 
-.user-section:hover .user-menu,
-.user-menu:hover {
+.user-section:hover .user-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.user-menu-item {
   display: flex;
-}
-
-.user-menu a {
-  display: block;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
   width: 100%;
-  padding: 10px 15px;
+  padding: 12px 20px;
   box-sizing: border-box;
   color: #edeff1;
   text-decoration: none;
@@ -135,7 +229,23 @@ header.shrink .username {
   transition: background-color 0.2s ease;
 }
 
-.user-menu a:hover {
+.user-menu-item img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.user-menu a.user-menu-item:hover {
   background-color: #0a0d0f;
   cursor: pointer;
+}
+
+.menu-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #000000;
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: block;
 }

@@ -42,6 +42,11 @@ function Header() {
       </div>
 
       <div className="header-right">
+        <div className="search-container">
+          <input type="text" placeholder="Search..." className="search-input" />
+          <img src="/src/assets/icons/search.png" alt="Search" className="search-icon-inside" />
+        </div>
+
         <div className="user-section">
           <img
             src="/src/assets/icons/avatar.png"
@@ -50,18 +55,31 @@ function Header() {
           <span className="username">Franco</span>
 
           <div className="user-menu">
-            <Link to="/profile">Profile</Link>
-            <Link to="/settings">Settings</Link>
-            <Link to="/#">Logout</Link>
+            <div className="menu-divider"></div>
+            <Link to="/profile" className="user-menu-item">
+              <img src="/src/assets/icons/profile-dark.png" alt="Profile" />
+              <span>Profile</span>
+            </Link>
+            <div className="menu-divider"></div>
+            <Link to="/settings" className="user-menu-item">
+              <img src="/src/assets/icons/settings-dark.png" alt="Settings" />
+              <span>Settings</span>
+            </Link>
+            <div className="menu-divider"></div>
+            <Link to="/#" className="user-menu-item">
+              <img src="/src/assets/icons/logout-dark.png" alt="Logout" />
+              <span>Logout</span>
+            </Link>
           </div>
         </div>
 
-        <Link to="/search">
+        <div className="band-section">
           <img
-            src="/src/assets/icons/search.png"
-            alt="Search"            
+            src="/src/assets/icons/avatar.png"
+            alt="band"            
           />
-        </Link>
+          <span className="bandname">Band</span>
+        </div>
       </div>
     </header>
   );
