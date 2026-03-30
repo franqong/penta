@@ -93,7 +93,7 @@ header.shrink {
 }
 
 /* BAND SECTION */
-.band-section {
+/* .band-section {
   position: relative;
   display: flex;
   align-items: center;
@@ -114,7 +114,7 @@ header.shrink {
 
 header.shrink .bandname {
   font-size: 0.85rem;
-}
+} */
 
 /* IMAGES & LOGO */
 .header-left img,

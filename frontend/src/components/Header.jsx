@@ -73,13 +73,13 @@ function Header() {
           </div>
         </div>
 
-        <div className="band-section">
+        {/* <div className="band-section">
           <img
             src="/src/assets/icons/avatar.png"
             alt="band"            
           />
           <span className="bandname">Band</span>
-        </div>
+        </div> */}
       </div>
     </header>
   );
