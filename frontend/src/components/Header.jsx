@@ -48,17 +48,19 @@ function Header() {
         </div>
 
         <div className="user-section">
-          <img
-            src="/src/assets/icons/avatar.png"
-            alt="username"            
-          />
-          <span className="username">Franco</span>
+          <Link to="/profile" className="user-info-link">
+            <img
+              src="/src/assets/icons/avatar.png"
+              alt="username"
+            />
+            <span className="username">Franco</span>
+          </Link>
 
           <div className="user-menu">
             <div className="menu-divider"></div>
-            <Link to="/profile" className="user-menu-item">
+            <Link to="/band" className="user-menu-item">
               <img src="/src/assets/icons/profile-dark.png" alt="Profile" />
-              <span>Profile</span>
+              <span>Band</span>
             </Link>
             <div className="menu-divider"></div>
             <Link to="/settings" className="user-menu-item">

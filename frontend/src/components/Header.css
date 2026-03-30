@@ -152,10 +152,6 @@ header.shrink .logo {
 /* USER SECTION & MENU */
 .user-section {
   position: relative;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 8px 20px;
   margin: -8px -20px;
   cursor: pointer;
   z-index: 1001;
@@ -164,15 +160,19 @@ header.shrink .logo {
   border-radius: 6px;
 }
 
+.user-info-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 20px;
+  text-decoration: none;
+}
+
 .user-section:hover {
   background-color: #11141a;
   border-color: #676767;
   border-bottom-color: transparent;
   border-radius: 10px 10px 0 0;
-}
-
-.user-section a {
-  display: flex;
 }
 
 .username {
