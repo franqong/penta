@@ -69,7 +69,7 @@ header.shrink {
   width: 100%;
   padding: 6px 35px 6px 15px;
   background-color: #1a1d23;
-  border: 1px solid #454d5a;
+  border: 1px solid #676767;
   border-radius: 15px;
   color: #edeff1;
   font-family: "Libre Franklin";
@@ -166,6 +166,12 @@ header.shrink .logo {
   gap: 12px;
   padding: 8px 20px;
   text-decoration: none;
+  border-radius: inherit;
+  transition: background-color 0.2s ease;
+}
+
+.user-info-link:hover {
+  background-color: #0a0d0f;
 }
 
 .user-section:hover {
