@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(3, auto);
-  gap: 30px;
+  /* gap: 30px; */
   padding: 20px;
 }
 
@@ -32,10 +32,47 @@
   gap: 6px;
 }
 
+.profile-info-user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: -10px;
+}
+
+.profile-info-user img {
+  width: 15px;
+  height: 15px;
+}
+
 .profile-name {
   color: #edeff1;
   font-size: 1.4rem;
   font-weight: bold;
+  display: flex;
+}
+
+.profile-user {
+  color: #edeff1;
+  font-size: 0.8rem;
+  font-weight: lighter;
+  display: flex;
+}
+
+.band-info {
+  color: #edeff1;
+  font-size: 0.8rem;
+  font-weight: lighter;
+  display: flex;
+  background-color: #1a1d23;
+  border: 1px solid #676767;
+  border-radius: 6px;
+  padding: 0 8px;
+}
+
+.band-info:hover {
+  background-color: #0a0d0f;
+    cursor: pointer;
 }
 
 .profile-bio {
@@ -76,4 +113,27 @@
 .stat-label {
   color: #ECDFCC;
   font-size: 0.85rem;
+}
+
+/* Buttons */
+
+.section-buttons {
+  margin-left: 30px;
+  display: flex;
+  gap: 18px;
+}
+
+.buttons {
+  color: #edeff1;
+  font-size: 0.9rem;
+  font-weight: lighter;
+  background-color: #1a1d23;
+  border: 1px solid #676767;
+  border-radius: 6px;
+  padding: 0px 8px;
+}
+
+.buttons:hover {
+  background-color: #0a0d0f;
+  cursor: pointer;
 }

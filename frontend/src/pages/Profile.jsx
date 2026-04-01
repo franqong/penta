@@ -1,4 +1,5 @@
 import "./Profile.css";
+import { Link } from "react-router-dom";
 
 function Profile() {
   return (
@@ -14,7 +15,14 @@ function Profile() {
           />
 
           <div className="profile-info">
-            <h1 className="profile-name">Franco</h1>
+            <div className="profile-info-user">
+              <h1 className="profile-name">Franco</h1>
+              <img src="/src/assets/icons/badge.png" alt="Verified"></img>
+              <Link to="/band" className="band-info">
+                Black Label Society
+              </Link>
+            </div>
+            <h1 className="profile-user">@franqo</h1>
             <p className="profile-bio">
               Hermética no es la mejor banda heavy de Argentina. No escucho
               lloros.
@@ -42,6 +50,24 @@ function Profile() {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="section-buttons">
+        <Link to="/reviews" className="buttons">
+          Reviews
+        </Link>
+        <Link to="/communities" className="buttons">
+          Communities
+        </Link>
+        <Link to="/songs" className="buttons">
+          Songs
+        </Link>
+        <Link to="/albums" className="buttons">
+          Albums
+        </Link>
+        <Link to="/band" className="buttons">
+          Band
+        </Link>
       </div>
     </div>
   );
