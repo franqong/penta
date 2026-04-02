@@ -37,8 +37,8 @@ function Profile() {
         <div className="profile-right">
           <div className="profile-stats">
             <div className="stat">
-              <span className="stat-number">45</span>
-              <span className="stat-label">Reviews</span>
+              <span className="follow-button">Follow</span>
+              <span className="follows-you">Follows you</span>
             </div>
             <div className="stat">
               <span className="stat-number">120</span>
@@ -52,7 +52,7 @@ function Profile() {
         </div>
       </div>
 
-      <div className="section-buttons">
+      <div className="section-buttons" style={{ gridColumn: "1 / -1" }}>
         <Link to="/reviews" className="buttons">
           Reviews
         </Link>
