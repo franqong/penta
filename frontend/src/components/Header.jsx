@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import "./Header.css";
+import { PiWaveformBold, PiVinylRecord, PiArticleNyTimes, PiUserCircleFill } from "react-icons/pi";
 import { Link } from "react-router-dom";
+import "./Header.css";
 
 function Header() {
   const [shrink, setShrink] = useState(false);
@@ -25,13 +26,13 @@ function Header() {
     <header className={shrink ? "shrink" : ""}>
       <div className="header-left">
         <Link to="/songs">
-          <img src="/src/assets/icons/wave-sound.png" alt="Canciones" />
+          <PiWaveformBold />
         </Link>
         <Link to="/albums">
-          <img src="/src/assets/icons/music.png" alt="Álbumes" />
+          <PiVinylRecord />
         </Link>
         <Link to="/reviews">
-          <img src="/src/assets/icons/speech-bubble.png" alt="Reviews" />
+          <PiArticleNyTimes />
         </Link>
       </div>
 
@@ -49,10 +50,7 @@ function Header() {
 
         <div className="user-section">
           <Link to="/profile" className="user-info-link">
-            <img
-              src="/src/assets/icons/avatar.png"
-              alt="username"
-            />
+            <PiUserCircleFill />
             <span className="username">Franco</span>
           </Link>
 

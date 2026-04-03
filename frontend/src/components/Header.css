@@ -117,8 +117,8 @@ header.shrink .bandname {
 } */
 
 /* IMAGES & LOGO */
-.header-left img,
-.header-right img {
+.header-left img, svg,
+.header-right img, svg {
   width: 22px;
   height: 22px;
   cursor: pointer;
@@ -128,8 +128,8 @@ header.shrink .bandname {
     filter 0.2s ease;
 }
 
-.header-left img:hover,
-.header-right img:hover {
+.header-left img:hover, svg:hover,
+.header-right img:hover, svg:hover {
   filter: brightness(1.2);
 }
 
