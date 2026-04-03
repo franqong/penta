@@ -50,7 +50,7 @@ function Header() {
 
         <div className="user-section">
           <Link to="/profile" className="user-info-link">
-            <PiUserCircleFill />
+            <PiUserCircleFill className="user-avatar-icon" />
             <span className="username">Franco</span>
           </Link>
 
