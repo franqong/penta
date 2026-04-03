@@ -58,6 +58,7 @@ footer {
   height: 24px;
   filter: brightness(0.8);
   transition: filter 0.2s ease;
+  cursor: pointer;
 }
 
 .footer-socials svg:hover {
