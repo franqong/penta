@@ -1,5 +1,6 @@
-import './Footer.css';
 import { Link } from "react-router-dom";
+import { FaXTwitter, FaFacebook, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa6";
+import './Footer.css';
 
 function Footer() {
   return (
@@ -18,19 +19,19 @@ function Footer() {
         {/* ----- RIGHT ----- */}
         <div className="footer-socials">
           <Link to="https://x.com" target="_blank" rel="noreferrer">
-            <img src="/src/assets/icons/x.png" alt="X" />
+            <FaXTwitter />
           </Link>
           <Link to="https://facebook.com" target="_blank" rel="noreferrer">
-            <img src="/src/assets/icons/fb.png" alt="Facebook" />
+            <FaFacebook />
           </Link>
           <Link to="https://instagram.com" target="_blank" rel="noreferrer">
-            <img src="/src/assets/icons/ig.png" alt="Instagram" />
+            <FaInstagram />
           </Link>
           <Link to="https://tiktok.com" target="_blank" rel="noreferrer">
-            <img src="/src/assets/icons/tt.png" alt="TikTok" />
+            <FaTiktok />
           </Link>
           <Link to="https://youtube.com" target="_blank" rel="noreferrer">
-            <img src="/src/assets/icons/yt.png" alt="YouTube" />
+            <FaYoutube />
           </Link>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { PiWaveformBold, PiVinylRecord, PiArticleNyTimes, PiUserCircleFill } from "react-icons/pi";
 import { Link } from "react-router-dom";
+import { PiWaveformBold, PiVinylRecord, PiArticleNyTimes, PiMagnifyingGlassBold, PiUserCircleFill } from "react-icons/pi";
 import "./Header.css";
 
 function Header() {
@@ -45,7 +45,7 @@ function Header() {
       <div className="header-right">
         <div className="search-container">
           <input type="text" placeholder="Search..." className="search-input" />
-          <img src="/src/assets/icons/search.png" alt="Search" className="search-icon-inside" />
+          <PiMagnifyingGlassBold className="search-icon-inside"/>
         </div>
 
         <div className="user-section">

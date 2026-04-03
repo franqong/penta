@@ -1,5 +1,6 @@
-import "./Profile.css";
 import { Link } from "react-router-dom";
+import { PiUserCircleFill, PiSealCheckFill, PiMapPinAreaFill } from "react-icons/pi";
+import "./Profile.css";
 
 function Profile() {
   return (
@@ -8,16 +9,12 @@ function Profile() {
 
       <div className="section">
         <div className="profile-left">
-          <img
-            src="/src/assets/icons/avatar.png"
-            alt="Foto de perfil"
-            className="profile-avatar"
-          />
+          <PiUserCircleFill className="profile-avatar"/>
 
           <div className="profile-info">
             <div className="profile-info-user">
               <h1 className="profile-name">Franco</h1>
-              <img src="/src/assets/icons/badge.png" alt="Verified"></img>
+              <PiSealCheckFill />
               <Link to="/band" className="band-info">
                 Black Label Society
               </Link>
@@ -27,7 +24,7 @@ function Profile() {
               Hermética no es la mejor banda heavy de Argentina. No escucho
               lloros.
             </p>
-            <p className="profile-location">📍 Santa Fe, Argentina</p>
+            <p className="profile-location"> <PiMapPinAreaFill /> Santa Fe, Argentina</p>
           </div>
         </div>
       </div>

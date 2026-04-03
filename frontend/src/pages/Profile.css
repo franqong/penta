@@ -40,7 +40,8 @@
   margin-bottom: -10px;
 }
 
-.profile-info-user img {
+.profile-info-user svg {
+  color: #daa520;
   width: 15px;
   height: 15px;
 }
@@ -80,10 +81,14 @@
   font-size: 0.9rem;
 }
 
-.profile-location {
+.profile-location, svg {
   color: #ECDFCC;
   font-size: 0.85rem;
   cursor: default;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
 }
 
 /* Profile Right */
@@ -99,7 +104,6 @@
   grid-auto-flow: column;
   grid-template-rows: auto auto;
   column-gap: 25px;
-  row-gap: 2px;
   align-items: center;
   justify-items: center; 
 }

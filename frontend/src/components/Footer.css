@@ -53,13 +53,13 @@ footer {
   margin: 0 8px;
 }
 
-.footer-socials img {
+.footer-socials svg {
   width: 24px;
   height: 24px;
   filter: brightness(0.8);
   transition: filter 0.2s ease;
 }
 
-.footer-socials img:hover {
+.footer-socials svg:hover {
   filter: brightness(1.2);
 }
