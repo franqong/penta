@@ -62,19 +62,14 @@ body {
   margin: 0;
   min-height: 100vh;
 
-  background-image:
-    url("/assets/backgrounds/background.png"),
-    url("/assets/backgrounds/bg-bottom.png");
-
-  background-repeat:
-    repeat-x,
-    repeat;
-    
-  background-position:
-    top center,
-    top left;
-
   background-color: #0b0e11;
+  background-image: linear-gradient(
+    to bottom,
+    #1a2029 0%,
+    #0b0e11 300px
+  );
+
+  background-repeat: no-repeat;
 }
 
 .app-wrapper {
@@ -85,6 +80,21 @@ body {
 
 .main-content {
   flex: 1;
+  position: relative;
+}
+
+.main-content::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.06) 1px,
+    transparent 1px
+  );
+  background-size: 2px 2px;
+  opacity: 0.15;
+  z-index: -1;
 }
 
 a {
@@ -96,7 +106,7 @@ a:hover {
   color: #ecdfcc;
 }
 
-/* SCROLLBAR PERSONALIZADO */
+/* SCROLLBAR */
 
 html {
   scrollbar-gutter: stable;
@@ -109,19 +119,16 @@ html {
   width: 10px;
 }
 
-/* Fondo de la barra */
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 
-/* Barra draggable */
 ::-webkit-scrollbar-thumb {
-  background: rgba(236, 223, 204, 0.25); /* tu color #ECDFCC en alpha */
+  background: rgba(236, 223, 204, 0.25);
   border-radius: 10px;
   transition: background 0.3s ease;
 }
 
-/* Hover */
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(236, 223, 204, 0.45);
 }
