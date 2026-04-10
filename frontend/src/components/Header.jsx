@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { PiWaveformBold, PiVinylRecord, PiArticleNyTimes, PiMagnifyingGlassBold, PiUserCircleFill } from "react-icons/pi";
+import PentaLogo from "./PentaLogo";
 import "./Header.css";
 
 function Header() {
@@ -38,7 +39,7 @@ function Header() {
 
       <div className="header-center">
         <Link to="/">
-          <img src="/assets/main/penta.png" alt="PENTA" className="logo" />
+          <PentaLogo className="logo" />
         </Link>
       </div>
 

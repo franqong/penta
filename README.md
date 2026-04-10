@@ -1,12 +1,12 @@
 <!--
 <h1 align="left">
-  <img src="frontend/public/assets/main/favicon-dark.png" width="30" height="30" style="vertical-align: middle;">
+  <img src="frontend/public/assets/main/fav-dark.svg" width="30" height="30" style="vertical-align: middle;">
   Penta
 </h1>
 -->
 
 <p align="center">
-  <img src="frontend/public/assets/main/penta.png" width="200" alt="Penta">
+  <img src="frontend/public/assets/main/penta.svg" width="200" alt="Penta">
 </p>
 
 Penta is a social platform designed for music enthusiasts to discover, discuss, and share the music they love. It provides a dedicated space for fans, critics, and artists to connect through their shared passion for music.

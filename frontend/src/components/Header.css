@@ -168,8 +168,15 @@ header.shrink .header-right img {
 
 .logo {
   height: 45px;
+  color: #ecdfcc;
   cursor: pointer;
-  transition: height 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 
+    height 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.2s ease;
+}
+
+.logo:hover {
+  color: #e7e0d7;
 }
 
 header.shrink .logo {
