@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { PiWaveformBold, PiVinylRecord, PiArticleNyTimes, PiMagnifyingGlassBold, PiUserCircleFill } from "react-icons/pi";
-import PentaLogo from "./PentaLogo";
+import { PentaLogo } from "../../ui/icons";
 import "./Header.css";
 
 function Header() {

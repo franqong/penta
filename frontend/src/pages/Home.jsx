@@ -1,8 +1,8 @@
 import "./Home.css";
-import AlbumCard from "../components/AlbumCard.jsx";
-import ReviewCard from "../components/ReviewCard.jsx";
-import CommunityCard from "../components/CommunityCard.jsx";
-import StatCard from "../components/StatCard.jsx";
+import AlbumCard from "../components/features/Album/AlbumCard.jsx";
+import ReviewCard from "../components/features/Review/ReviewCard.jsx";
+import CommunityCard from "../components/features/Community/CommunityCard.jsx";
+import StatCard from "../components/features/Stat/StatCard.jsx";
 
 function Home({ onPlayTrack }) {
   return (

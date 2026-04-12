@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import vinylIcon from '../assets/icons/vinyl.png';
+import vinylIcon from '../../../assets/icons/vinyl.png';
 
 function AlbumCard({ image, song, artist, year, deezerId, onPlay }) {
   const navigate = useNavigate();

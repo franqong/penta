@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./components/Header.jsx";
-import Footer from "./components/Footer.jsx";
+import Header from "./components/layout/Header/Header.jsx";
+import Footer from "./components/layout/Footer/Footer.jsx";
 import Home from "./pages/Home.jsx";
 import Profile from "./pages/Profile.jsx";
 import Settings from "./pages/Settings.jsx";
-import MusicPlayer from "./components/MusicPlayer.jsx";
+import MusicPlayer from "./components/features/MusicPlayer/MusicPlayer.jsx";
 
 function App() {
   const [track, setTrack] = useState({
