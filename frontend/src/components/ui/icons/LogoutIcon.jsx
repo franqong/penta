@@ -1,7 +1,7 @@
 function LogoutIcon({ className }) {
   return (
     <svg
-      viewBox="0 0 72.807991 210.06712"
+      viewBox="0 0 6.3499999 6.3499999"
       version="1.1"
       id="svg1"
       xmlSpace="preserve"
@@ -11,7 +11,7 @@ function LogoutIcon({ className }) {
       <defs id="defs1" />
       <g
         id="g-clef"
-        transform="translate(-66.246193,-37.716199)"
+        transform="matrix(0.03022751,0,0,0.03022751,0.07214043,-1.1399699)"
         style={{ display: "inline" }}
       >
         <path

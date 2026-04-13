@@ -3,7 +3,7 @@ function SettingsIcon({ className }) {
     <svg
       version="1.1"
       id="svg1"
-      viewBox="0 0 225.49425 257.87751"
+      viewBox="0 0 24 23.999803"
       xmlSpace="preserve"
       className={className}
       xmlns="http://www.w3.org/2000/svg"
@@ -11,7 +11,7 @@ function SettingsIcon({ className }) {
       <defs id="defs1" />
       <g
         id="f-clef"
-        transform="translate(0,-26.099253)"
+        transform="matrix(0.09306668,0,0,0.09306668,1.5069885,-2.4289712)"
       >
         <ellipse
           style={{ display: "inline", fill: "currentColor", strokeWidth: 0.9062 }}

@@ -1,7 +1,7 @@
 function BandIcon({ className }) {
   return (
     <svg
-      viewBox="0 0 17.952131 27.301693"
+      viewBox="0 0 6.35 6.3499539"
       version="1.1"
       id="svg1"
       xmlSpace="preserve"
@@ -12,7 +12,7 @@ function BandIcon({ className }) {
       <g
         id="c-clef"
         style={{ display: "inline" }}
-        transform="translate(-9.999999,-9.972868)"
+        transform="matrix(0.23258245,0,0,0.23258245,-1.23851,-2.3194846)"
       >
         <path
           id="2"
