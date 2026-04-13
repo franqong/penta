@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { PiWaveformBold, PiVinylRecord, PiArticleNyTimes, PiMagnifyingGlassBold, PiUserCircleFill } from "react-icons/pi";
-import { PentaLogo } from "../../ui/icons";
+import { PentaLogo, BandIcon, SettingsIcon, LogoutIcon } from "../../ui/icons";
 import "./Header.css";
 
 function Header() {
@@ -58,29 +58,21 @@ function Header() {
           <div className="user-menu">
             <div className="menu-divider"></div>
             <Link to="/band" className="user-menu-item">
-              <img src="/src/assets/icons/profile-dark.png" alt="Profile" />
+              <BandIcon />
               <span>Band</span>
             </Link>
             <div className="menu-divider"></div>
             <Link to="/settings" className="user-menu-item">
-              <img src="/src/assets/icons/settings-dark.png" alt="Settings" />
+              <SettingsIcon />
               <span>Settings</span>
             </Link>
             <div className="menu-divider"></div>
             <Link to="/#" className="user-menu-item">
-              <img src="/src/assets/icons/logout-dark.png" alt="Logout" />
+              <LogoutIcon />
               <span>Logout</span>
             </Link>
           </div>
         </div>
-
-        {/* <div className="band-section">
-          <img
-            src="/src/assets/icons/avatar.png"
-            alt="band"            
-          />
-          <span className="bandname">Band</span>
-        </div> */}
       </div>
     </header>
   );

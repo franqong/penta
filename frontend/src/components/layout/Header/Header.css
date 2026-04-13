@@ -118,7 +118,7 @@ header.shrink .bandname {
 
 /* IMAGES & LOGO */
 .header-left svg,
-.header-right img,
+.header-right img, 
 .header-right svg:not(.search-icon-inside) {
   width: 22px;
   height: 22px;
@@ -161,7 +161,8 @@ header.shrink .search-icon-inside {
 }
 
 header.shrink .header-left svg,
-header.shrink .header-right img {
+header.shrink .header-right img, 
+header.shrink .header-right svg {
   width: 18px;
   height: 18px;
 }
@@ -269,7 +270,7 @@ header.shrink .username {
   transition: background-color 0.2s ease;
 }
 
-.user-menu-item img {
+.user-menu-item svg {
   width: 22px;
   height: 22px;
   object-fit: contain;
