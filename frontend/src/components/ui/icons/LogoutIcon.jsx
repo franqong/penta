@@ -3,7 +3,7 @@ function LogoutIcon({ className }) {
     <svg
       viewBox="0 0 6.3499999 6.3499999"
       version="1.1"
-      id="svg1"
+      id="logout-icon"
       xmlSpace="preserve"
       className={className}
       xmlns="http://www.w3.org/2000/svg"

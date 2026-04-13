@@ -3,7 +3,7 @@ function BandIcon({ className }) {
     <svg
       viewBox="0 0 6.35 6.3499539"
       version="1.1"
-      id="svg1"
+      id="band-icon"
       xmlSpace="preserve"
       className={className}
       xmlns="http://www.w3.org/2000/svg"

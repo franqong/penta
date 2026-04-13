@@ -1,9 +1,9 @@
 function SettingsIcon({ className }) {
   return (
     <svg
-      version="1.1"
-      id="svg1"
       viewBox="0 0 24 23.999803"
+      version="1.1"
+      id="settings-icon"      
       xmlSpace="preserve"
       className={className}
       xmlns="http://www.w3.org/2000/svg"

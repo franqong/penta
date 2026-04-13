@@ -173,7 +173,8 @@ function Home({ onPlayTrack }) {
       </div>
 
       {/* ----- SUGGESTED PLAYLIST ----- */}
-      <div className="section deezer-wrapper" style={{ gridColumn: "1 / -1" }}>
+      
+      {/* <div className="section deezer-wrapper" style={{ gridColumn: "1 / -1" }}>
         <h2>Playlist destacada</h2>
         <iframe
           className="deezer-player"
@@ -185,7 +186,7 @@ function Home({ onPlayTrack }) {
           allowTransparency="true"
           allow="encrypted-media; clipboard-write"
         ></iframe>
-      </div>
+      </div> */}
     </main>
   );
 }

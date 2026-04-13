@@ -1,11 +1,11 @@
 function PentaLogo({ className }) {
   return (
     <svg
-      version="1.1"
-      id="penta-svg"
-      width="574.59"
-      height="283.98"
       viewBox="0 0 574.59 283.98"
+      version="1.1"
+      id="penta-logo"
+      width="574.59"
+      height="283.98"      
       xmlSpace="preserve"
       className={className}
       xmlns="http://www.w3.org/2000/svg"
