@@ -1,7 +1,7 @@
 import * as React from "react";
 const PentaLogo = (props) => (
   <svg
-    id="svg1"
+    id="penta-logo"
     width={574.59174}
     height={283.97675}
     viewBox="0 0 574.59173 283.97675"
