@@ -7,6 +7,18 @@ import "./Header.css";
 function Header() {
   const [shrink, setShrink] = useState(false);
 
+  const navLinks = [
+    { to: "/songs", Icon: PiWaveformBold },
+    { to: "/albums", Icon: PiVinylRecord },
+    { to: "/reviews", Icon: PiArticleNyTimes },
+  ];
+
+  const userMenuLinks = [
+    { to: "/band", Icon: BandIcon, label: "Band" },
+    { to: "/settings", Icon: SettingsIcon, label: "Settings" },
+    { to: "/#", Icon: LogoutIcon, label: "Logout" },
+  ];
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -26,15 +38,11 @@ function Header() {
   return (
     <header className={shrink ? "shrink" : ""}>
       <div className="header-left">
-        <Link to="/songs">
-          <PiWaveformBold />
-        </Link>
-        <Link to="/albums">
-          <PiVinylRecord />
-        </Link>
-        <Link to="/reviews">
-          <PiArticleNyTimes />
-        </Link>
+        {navLinks.map(({ to, Icon }) => (
+          <Link key={to} to={to}>
+            <Icon />
+          </Link>
+        ))}
       </div>
 
       <div className="header-center">
@@ -56,21 +64,15 @@ function Header() {
           </Link>
 
           <div className="user-menu">
-            <div className="menu-divider"></div>
-            <Link to="/band" className="user-menu-item">
-              <BandIcon />
-              <span>Band</span>
-            </Link>
-            <div className="menu-divider"></div>
-            <Link to="/settings" className="user-menu-item">
-              <SettingsIcon />
-              <span>Settings</span>
-            </Link>
-            <div className="menu-divider"></div>
-            <Link to="/#" className="user-menu-item">
-              <LogoutIcon />
-              <span>Logout</span>
-            </Link>
+            {userMenuLinks.map(({ to, Icon, label }, index) => (
+              <div key={to}>
+                {index > 0 && <div className="menu-divider"></div>}
+                <Link to={to} className="user-menu-item">
+                  <Icon />
+                  <span>{label}</span>
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </div>

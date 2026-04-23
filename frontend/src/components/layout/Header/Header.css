@@ -92,29 +92,6 @@ header.shrink {
   pointer-events: none;
 }
 
-/* BAND SECTION */
-/* .band-section {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 8px 15px;
-  margin: -8px -15px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  border: 1px solid transparent;
-}
-
-.bandname {
-  color: #edeff1;
-  font-size: 0.95rem;
-  font-weight: 650;
-  transition: font-size 0.25s ease;
-}
-
-header.shrink .bandname {
-  font-size: 0.85rem;
-} */
 
 /* IMAGES & LOGO */
 .header-left svg,
@@ -267,13 +244,19 @@ header.shrink .username {
   color: #edeff1;
   text-decoration: none;
   font-size: 14px;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, font-size 0.25s ease, padding 0.25s ease;
+}
+
+header.shrink .user-menu-item {
+  padding: 8px 20px;
+  font-size: 13px;
 }
 
 .user-menu-item svg {
   width: 22px;
   height: 22px;
   object-fit: contain;
+  flex-shrink: 0;
 }
 
 .user-menu a.user-menu-item:hover {
