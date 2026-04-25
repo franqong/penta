@@ -7,6 +7,8 @@ footer {
   border-top: 1px solid #676767;
   color: #fff;
   font-family: "Libre-Franklin";
+  position: relative;
+  z-index: 10;
 }
 
 .footer-container {

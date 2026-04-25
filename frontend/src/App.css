@@ -1,134 +1,132 @@
 @font-face {
-  font-family: "Cinzel";
-  src: url("/assets/fonts/Cinzel-VariableFont_wght.ttf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Cinzel";
+    src: url("/assets/fonts/Cinzel-VariableFont_wght.ttf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Cormorant";
-  src: url("/assets/fonts/Cormorant-VariableFont_wght.ttf") format("opentype");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Cormorant";
+    src: url("/assets/fonts/Cormorant-VariableFont_wght.ttf") format("opentype");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Libre-Baskerville";
-  src: url("/assets/fonts/LibreBaskerville-VariableFont_wght.ttf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Libre-Baskerville";
+    src: url("/assets/fonts/LibreBaskerville-VariableFont_wght.ttf")
+        format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Libre-Franklin";
-  src: url("/assets/fonts/LibreFranklin-VariableFont_wght.ttf") format("truetype-variations");
-  font-weight: 100 900; 
-  font-style: normal;
-  font-display: swap;
+    font-family: "Libre-Franklin";
+    src: url("/assets/fonts/LibreFranklin-VariableFont_wght.ttf")
+        format("truetype-variations");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
 }
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-*, *::before, *::after {
-  box-sizing: border-box;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 body {
-  font-family: "Libre-Baskerville";
-  overflow-x: hidden;
+    font-family: "Libre-Baskerville";
+    overflow-x: hidden;
 
-  margin: 0;
-  min-height: 100vh;
+    margin: 0;
+    min-height: 100vh;
 
-  background-color: #0b0e11;
-  background-image: linear-gradient(
-    to bottom,
-    #161b21 0%,
-    #0b0e11 300px
-  );
+    background-color: #070a0c0;
+    background-image: linear-gradient(to bottom, #0b1118 0%, #070a0c 300px);
 
-  background-repeat: no-repeat;
+    background-repeat: no-repeat;
 }
 
 .app-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .main-content {
-  flex: 1;
-  position: relative;
+    flex: 1;
+    position: relative;
+    isolation: isolate;
 }
 
 .main-content::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background-image: radial-gradient(
-    rgba(255, 255, 255, 0.06) 1px,
-    transparent 1px
-  );
-  background-size: 2px 2px;
-  opacity: 0.15;
-  z-index: -1;
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 500 500' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.08;
+    mix-blend-mode: overlay;
+    z-index: -1;
 }
 
 a {
-  text-decoration: none;
-  color: #ecdfcc;
+    text-decoration: none;
+    color: #ecdfcc;
 }
 
 a:hover {
-  color: #ecdfcc;
+    color: #ecdfcc;
 }
 
 /* SCROLLBAR */
 
 html {
-  scrollbar-gutter: stable;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(236, 223, 204, 0.25) transparent;
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(236, 223, 204, 0.25) transparent;
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+    background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(236, 223, 204, 0.25);
-  border-radius: 10px;
-  transition: background 0.3s ease;
+    background: rgba(236, 223, 204, 0.25);
+    border-radius: 10px;
+    transition: background 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(236, 223, 204, 0.45);
+    background: rgba(236, 223, 204, 0.45);
 }
