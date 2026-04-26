@@ -1,6 +1,5 @@
 import { ZodError } from "zod";
-import prismaPkg from "@prisma/client";
-const { Prisma } = prismaPkg;
+import { Prisma } from "@prisma/client";
 
 export const errorMiddleware = (err, req, res, next) => {
   // ZOD
