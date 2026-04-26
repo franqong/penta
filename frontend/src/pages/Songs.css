@@ -1,0 +1,9 @@
+.layout {
+    padding: 20px;
+    display: grid;
+    grid-template-rows: repeat(5, auto);
+}
+
+.section {
+  padding: 40px 30px;  
+}
