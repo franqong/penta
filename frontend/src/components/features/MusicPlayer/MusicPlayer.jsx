@@ -41,6 +41,8 @@ function MusicPlayer({ track, setTrack }) {
   }, [location]);
 
   if (!track) return null;
+  
+  const VisualContent = track.image;
 
   return (
     <div className="music-player-placeholder" ref={placeholderRef}>
@@ -49,7 +51,15 @@ function MusicPlayer({ track, setTrack }) {
           
           {/* LEFT */}
           <div className="player-info-global">
-            <img src={track.image} alt={track.song} />
+            {/* 2. Renderizado condicional híbrido */}
+            <div className="player-visual-wrapper">
+              {typeof VisualContent === 'string' ? (
+                <img src={VisualContent} alt={track.song} />
+              ) : (
+                <VisualContent />
+              )}
+            </div>
+
             <div className="global-details">
               <span className="song">{track.song}</span>
               <span className="artist">{track.artist}</span>

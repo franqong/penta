@@ -7,10 +7,11 @@ import Profile from "./pages/Profile.jsx";
 import Settings from "./pages/Settings.jsx";
 import SongsPage from "./pages/Songs.jsx";
 import MusicPlayer from "./components/features/MusicPlayer/MusicPlayer.jsx";
+import { VinylIcon } from "./components/ui/icons";
 
 function App() {
   const [track, setTrack] = useState({
-    image: "/src/assets/icons/vinyl.png",
+    image: VinylIcon,
     song: "Selecciona una canción",
     artist: "Artista",
     deezerId: null

@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import vinylIcon from '../../../assets/icons/vinyl.png';
+import { VinylIcon } from "../../ui/icons";
 
 function AlbumCard({ image, song, artist, year, deezerId, onPlay }) {
   const navigate = useNavigate();
@@ -8,7 +8,7 @@ function AlbumCard({ image, song, artist, year, deezerId, onPlay }) {
     <div className="album-card">
       <div className="album-wrapper">
         <div className="vinyl-disk" onClick={() => navigate('/album-details')}>
-          <img src={vinylIcon} alt="Vinyl" />
+          <VinylIcon />
         </div>
 
         <div className="image-container">
