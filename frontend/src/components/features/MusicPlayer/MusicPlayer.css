@@ -68,7 +68,7 @@
   height: 100%;
 }
 
-.player-info-global svg {
+.player-info-global svg, img {
   width: 48px;
   height: 48px;
   border-radius: 4px;
@@ -77,7 +77,7 @@
   transition: width 0.3s ease, height 0.3s ease;
 }
 
-.global-player-container.docked .player-info-global svg {
+.global-player-container.docked .player-info-global svg, img {
   width: 36px;
   height: 36px;
 }

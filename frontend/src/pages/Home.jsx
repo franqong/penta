@@ -51,6 +51,22 @@ function Home({ onPlayTrack }) {
             deezerId="722078382"
             onPlay={onPlayTrack}
           />
+          <AlbumCard
+            image="/src/assets/covers/MerDeNoms-APerfectCircle.jpg"
+            song="3 Libras"
+            artist="A Perfect Circle"
+            year="2000"
+            deezerId=""
+            onPlay={onPlayTrack}
+          />
+          <AlbumCard
+            image="/src/assets/covers/Audioslave-Audioslave.jpg"
+            song="Like a Stone"
+            artist="Audioslave"
+            year="2002"
+            deezerId=""
+            onPlay={onPlayTrack}
+          />
         </div>
       </div>
 
@@ -84,6 +100,22 @@ function Home({ onPlayTrack }) {
             song="Cowboys from Hell"
             artist="Pantera"
             year="1990"
+            onPlay={onPlayTrack}
+          />
+          <AlbumCard
+            image="/src/assets/covers/WakingtheFallen-AvengedSevenfold.jpg"
+            song="Waking the Fallen"
+            artist="Avenged Sevenfold"
+            year="2003"
+            deezerId=""
+            onPlay={onPlayTrack}
+          />
+          <AlbumCard
+            image="/src/assets/covers/ThePoison-BulletforMyValentine.jpg"
+            song="The Poison"
+            artist="Bullet for My Valentine"
+            year="2005"
+            deezerId=""
             onPlay={onPlayTrack}
           />
         </div>

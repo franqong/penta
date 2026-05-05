@@ -1,9 +1,188 @@
-.layout {
-    padding: 20px;
+.songs-layout {
     display: grid;
     grid-template-rows: repeat(5, auto);
+    gap: 30px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.section {
-  padding: 40px 30px;  
+.songs-section {
+    padding: 40px 30px;
+}
+
+.songs-section h2 {
+    margin-bottom: 20px;
+    color: #edeff1;
+    font-size: 1.4rem;
+}
+
+.songs-covers-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(150px, 1fr));
+    gap: clamp(40px, 4.5vw, 60px);
+    padding-right: 70px;
+}
+
+/* Album Card */
+
+.songs-album-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    transition: z-index 0s linear 0.1s;
+}
+
+.songs-album-card:hover {
+    z-index: 50;
+    transition-delay: 0s;
+}
+
+.songs-album-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 150px;
+    overflow: visible;
+}
+
+.songs-image-container {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    background-color: #10161c;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.songs-album-cover {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Vinyl animation */
+
+.songs-vinyl-disk {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    bottom: 5px;
+    left: 5px;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.songs-vinyl-disk svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: spin 4s linear infinite;
+}
+
+.songs-album-card:hover .songs-vinyl-disk {
+    transform: translateX(45%);
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Album Overlay */
+
+.songs-album-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    padding: 20px 10px;
+    background: rgba(0, 0, 0, 0.85);
+    color: #ecdfcc;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.songs-album-wrapper:hover .songs-album-overlay {
+    opacity: 1;
+}
+
+.songs-overlay-song {
+    margin-top: -10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.songs-overlay-artist {
+    color: #a0a0a0;
+    font-size: 0.85rem;
+}
+
+.songs-overlay-year {
+    margin-top: auto;
+    margin-bottom: -10px;
+    color: #888;
+    font-size: 0.75rem;
+}
+
+/* Mini Player */
+
+.songs-album-player {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 150px;
+    height: 30px;
+    margin-top: -5px;
+    background-color: #10161c;
+    border: 1px solid rgba(236, 223, 204, 0.1);
+    border-radius: 8px;
+}
+
+.songs-mini-btn-play,
+.songs-mini-btn-options {
+    background: none;
+    border: none;
+    color: #ecdfcc;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.songs-mini-btn-play:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Media Queries */
+
+@media (max-width: 1100px) {
+    .songs-covers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .songs-covers-grid {
+        grid-template-columns: 1fr;
+    }
 }
