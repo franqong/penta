@@ -8,6 +8,8 @@ import Settings from "./pages/Settings.jsx";
 import SongsPage from "./pages/Songs.jsx";
 import MusicPlayer from "./components/features/MusicPlayer/MusicPlayer.jsx";
 import { VinylIcon } from "./components/ui/icons";
+import AuthProvider from "./context/AuthContext";
+import ProtectedRoute from "./components/layout/ProtectedRoute";
 
 function App() {
   const [track, setTrack] = useState({
@@ -18,21 +20,23 @@ function App() {
   });
 
   return (
-    <BrowserRouter>
-      <div className="app-wrapper">
-        <Header />
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Home onPlayTrack={setTrack} />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/settings" element={<Settings />} />
-            <Route path="/songs" element={<SongsPage />} />
-          </Routes>
-        </main>
-        <MusicPlayer track={track} setTrack={setTrack} />
-        <Footer />
-      </div>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <div className="app-wrapper">
+          <Header />
+          <main className="main-content">
+            <Routes>
+              <Route path="/" element={<Home onPlayTrack={setTrack} />} />
+              <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+              <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
+              <Route path="/songs" element={<SongsPage />} />
+            </Routes>
+          </main>
+          <MusicPlayer track={track} setTrack={setTrack} />
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 
