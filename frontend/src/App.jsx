@@ -27,7 +27,7 @@ function App() {
           <main className="main-content">
             <Routes>
               <Route path="/" element={<Home onPlayTrack={setTrack} />} />
-              <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+              <Route path="/profile" element={<Profile />} />
               <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
               <Route path="/songs" element={<SongsPage />} />
             </Routes>
