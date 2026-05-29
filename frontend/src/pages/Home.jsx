@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import "./Home.css";
 import AlbumCard from "../components/features/Album/AlbumCard.jsx";
 import ReviewCard from "../components/features/Review/ReviewCard.jsx";
@@ -5,6 +6,17 @@ import CommunityCard from "../components/features/Community/CommunityCard.jsx";
 import StatCard from "../components/features/Stat/StatCard.jsx";
 
 function Home({ onPlayTrack }) {
+  const [recommendation, setRecommendation] = useState(null);
+
+  useEffect(() => {
+    // URL de la API de recomendaciones en Python.
+    // Asegúrate de que el servicio de Python esté corriendo en el puerto 8000.
+    fetch("http://localhost:8000/recommend")
+      .then((res) => res.json())
+      .then((data) => setRecommendation(data))
+      .catch((err) => console.error("Error fetching recommendation:", err));
+  }, []);
+
   return (
     <main className="home-grid">
       
@@ -14,6 +26,32 @@ function Home({ onPlayTrack }) {
           So long and goodnight, so long not goodnight."
         </h1>
       </div>
+
+      {/* ----- PYTHON RECOMMENDATION ----- */}
+      {recommendation && (
+        <div className="section recommendation-day" style={{ gridColumn: "1 / -1", backgroundColor: "rgba(255, 255, 255, 0.05)", padding: "20px", borderRadius: "8px", border: "1px solid var(--accent-color)" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div>
+              <h2 style={{ color: "var(--accent-color)", marginBottom: "10px" }}>Recomendación de tu API de Python</h2>
+              <p>Basado en tus gustos, hoy te sugerimos: <strong>{recommendation.song}</strong> de <strong>{recommendation.artist}</strong> ({recommendation.year})</p>
+            </div>
+            <button
+              onClick={() => onPlayTrack(recommendation)}
+              style={{
+                backgroundColor: "var(--accent-color)",
+                color: "white",
+                border: "none",
+                padding: "10px 20px",
+                borderRadius: "20px",
+                cursor: "pointer",
+                fontWeight: "bold"
+              }}
+            >
+              Reproducir ahora
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* ----- POPULAR THIS WEEK ----- */}
       <div className="section">
