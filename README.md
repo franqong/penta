@@ -6,7 +6,11 @@
 -->
 
 <p align="center">
-  <img src="frontend/public/assets/main/penta.svg" width="200" alt="Penta">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="frontend/public/assets/main/penta.svg">
+    <source media="(prefers-color-scheme: light)" srcset="frontend/public/assets/main/penta-light.svg">
+    <img src="frontend/public/assets/main/penta-light.svg" width="200" alt="Penta">
+  </picture>
 </p>
 
 Penta is a social platform designed for music enthusiasts to discover, discuss, and share the music they love. It provides a dedicated space for fans, critics, and artists to connect through their shared passion for music.
