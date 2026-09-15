@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaXTwitter, FaFacebook, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa6";
+import { FaGithub, FaMastodon, FaXTwitter, FaFacebook, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa6";
 import './Footer.css';
 
 function Footer() {
@@ -18,6 +18,12 @@ function Footer() {
 
         {/* ----- RIGHT ----- */}
         <div className="footer-socials">
+          <Link to="https://github.com/franqong/penta" target="_blank" rel="noreferrer">
+            <FaGithub />
+          </Link>
+          <Link to="https://mastodon.social/home" target="_blank" rel="noreferrer">
+            <FaMastodon />
+          </Link>
           <Link to="https://x.com" target="_blank" rel="noreferrer">
             <FaXTwitter />
           </Link>
