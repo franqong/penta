@@ -21,9 +21,12 @@
 .profile-avatar {
   width: 80px;
   height: 80px;
+  flex: 0 0 80px;
+  aspect-ratio: 1;
   border: 2px solid #ECDFCC;
   border-radius: 50%;
   object-fit: cover;
+  box-sizing: border-box;
 }
 
 .profile-info {
