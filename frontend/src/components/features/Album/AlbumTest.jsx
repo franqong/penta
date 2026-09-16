@@ -25,11 +25,11 @@ function AlbumTest({ image, song, artist, year, deezerId, onPlay }) {
       <div className="songs-album-player">
         <button 
           className="songs-mini-btn-play" 
+          aria-label={`Listen to ${song}`}
           onClick={() => onPlay({ image, song, artist, deezerId })}
         >
-          ▶
+          LISTEN
         </button>
-        <button className="songs-mini-btn-options">⋮</button>
       </div>
     </div>
   );
