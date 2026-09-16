@@ -40,8 +40,6 @@ Penta is being built with a modern and robust technology stack:
 
 ---
 
----
-
 We are excited to build a community where music can be explored and celebrated. Welcome to Penta!
 
 ## Copyright & License
