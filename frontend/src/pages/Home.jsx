@@ -20,7 +20,7 @@ function Home({ onPlayTrack }) {
         <h2>Popular This Week</h2>
         <div className="covers-grid">
           <AlbumCard
-            image="/src/assets/covers/SilverSideUp-Nickelback.jpg"
+            image="/covers/SilverSideUp-Nickelback.jpg"
             song="How You Remind Me"
             artist="Nickelback"
             year="2001"
@@ -28,7 +28,7 @@ function Home({ onPlayTrack }) {
             onPlay={onPlayTrack}
           />
           <AlbumCard
-            image="/src/assets/covers/Core-StoneTemplePilots.jpg"
+            image="/covers/Core-StoneTemplePilots.jpg"
             song="Plush"
             artist="Stone Temple Pilots"
             year="1992"
@@ -36,7 +36,7 @@ function Home({ onPlayTrack }) {
             onPlay={onPlayTrack}
           />
           <AlbumCard
-            image="/src/assets/covers/HybridTheory-LinkinPark.jpg"
+            image="/covers/HybridTheory-LinkinPark.jpg"
             song="In the End"
             artist="Linkin Park"
             year="2000"
@@ -44,7 +44,7 @@ function Home({ onPlayTrack }) {
             onPlay={onPlayTrack}
           />
           <AlbumCard
-            image="/src/assets/covers/10000Days-Tool.jpg"
+            image="/covers/10000Days-Tool.jpg"
             song="The Pot"
             artist="Tool"
             year="2006"
@@ -52,7 +52,7 @@ function Home({ onPlayTrack }) {
             onPlay={onPlayTrack}
           />
           <AlbumCard
-            image="/src/assets/covers/MerDeNoms-APerfectCircle.jpg"
+            image="/covers/MerDeNoms-APerfectCircle.jpg"
             song="3 Libras"
             artist="A Perfect Circle"
             year="2000"
@@ -60,7 +60,7 @@ function Home({ onPlayTrack }) {
             onPlay={onPlayTrack}
           />
           <AlbumCard
-            image="/src/assets/covers/Audioslave-Audioslave.jpg"
+            image="/covers/Audioslave-Audioslave.jpg"
             song="Like a Stone"
             artist="Audioslave"
             year="2002"
@@ -75,35 +75,35 @@ function Home({ onPlayTrack }) {
         <h2>Albums of the Month</h2>
         <div className="covers-grid">
           <AlbumCard
-            image="/src/assets/covers/BlackWaterPark-Opeth.jpg"
+            image="/covers/BlackWaterPark-Opeth.jpg"
             song="Blackwater Park"
             artist="Opeth"
             year="2001"
             onPlay={onPlayTrack}
           />
           <AlbumCard
-            image="/src/assets/covers/FromMarsToSirius-Gojira.jpg"
+            image="/covers/FromMarsToSirius-Gojira.jpg"
             song="From Mars to Sirius"
             artist="Gojira"
             year="2005"
             onPlay={onPlayTrack}
           />
           <AlbumCard
-            image="/src/assets/covers/AllHopeIsGone-Slipknot.jpg"
+            image="/covers/AllHopeIsGone-Slipknot.jpg"
             song="All Hope Is Gone"
             artist="Slipknot"
             year="2008"
             onPlay={onPlayTrack}
           />
           <AlbumCard
-            image="/src/assets/covers/CowboysFromHell-Pantera.jpg"
+            image="/covers/CowboysFromHell-Pantera.jpg"
             song="Cowboys from Hell"
             artist="Pantera"
             year="1990"
             onPlay={onPlayTrack}
           />
           <AlbumCard
-            image="/src/assets/covers/WakingtheFallen-AvengedSevenfold.jpg"
+            image="/covers/WakingtheFallen-AvengedSevenfold.jpg"
             song="Waking the Fallen"
             artist="Avenged Sevenfold"
             year="2003"
@@ -111,7 +111,7 @@ function Home({ onPlayTrack }) {
             onPlay={onPlayTrack}
           />
           <AlbumCard
-            image="/src/assets/covers/ThePoison-BulletforMyValentine.jpg"
+            image="/covers/ThePoison-BulletforMyValentine.jpg"
             song="The Poison"
             artist="Bullet for My Valentine"
             year="2005"
@@ -145,28 +145,28 @@ function Home({ onPlayTrack }) {
         <h2>Coming Soon</h2>
         <div className="covers-grid">
           <AlbumCard
-            image="/src/assets/covers/MakingLoveToMorganWallen-LimpBizkit.jpg"
+            image="/covers/MakingLoveToMorganWallen-LimpBizkit.jpg"
             song="Making Love To Morgan Wallen"
             artist="Limp Bizkit"
             year="2025"
             onPlay={onPlayTrack}
           />
           <AlbumCard
-            image="/src/assets/covers/Skeleta-Ghost.jpg"
+            image="/covers/Skeleta-Ghost.jpg"
             song="Skeletá"
             artist="Ghost"
             year="2025"
             onPlay={onPlayTrack}
           />
           <AlbumCard
-            image="/src/assets/covers/TsunamiSea-Spiritbox.jpg"
+            image="/covers/TsunamiSea-Spiritbox.jpg"
             song="Tsunami Sea"
             artist="Spiritbox"
             year="2025"
             onPlay={onPlayTrack}
           />
           <AlbumCard
-            image="/src/assets/covers/Parasomnia-DreamTheater.jpg"
+            image="/covers/Parasomnia-DreamTheater.jpg"
             song="Parasomnia"
             artist="Dream Theater"
             year="2025"

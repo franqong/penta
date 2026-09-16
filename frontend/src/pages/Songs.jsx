@@ -11,7 +11,7 @@ function SongsPage({ onPlayTrack }) {
         <h2>Songs of the Week</h2>
         <div className="songs-covers-grid">
           <AlbumTest
-            image="/src/assets/covers/SilverSideUp-Nickelback.jpg"
+            image="/covers/SilverSideUp-Nickelback.jpg"
             song="How You Remind Me"
             artist="Nickelback"
             year="2001"
@@ -19,7 +19,7 @@ function SongsPage({ onPlayTrack }) {
             onPlay={onPlayTrack}
           />
           <AlbumTest
-            image="/src/assets/covers/Core-StoneTemplePilots.jpg"
+            image="/covers/Core-StoneTemplePilots.jpg"
             song="Plush"
             artist="Stone Temple Pilots"
             year="1992"
@@ -27,7 +27,7 @@ function SongsPage({ onPlayTrack }) {
             onPlay={onPlayTrack}
           />
           <AlbumTest
-            image="/src/assets/covers/HybridTheory-LinkinPark.jpg"
+            image="/covers/HybridTheory-LinkinPark.jpg"
             song="In the End"
             artist="Linkin Park"
             year="2000"
@@ -35,7 +35,7 @@ function SongsPage({ onPlayTrack }) {
             onPlay={onPlayTrack}
           />
           <AlbumTest
-            image="/src/assets/covers/10000Days-Tool.jpg"
+            image="/covers/10000Days-Tool.jpg"
             song="The Pot"
             artist="Tool"
             year="2006"
@@ -43,7 +43,7 @@ function SongsPage({ onPlayTrack }) {
             onPlay={onPlayTrack}
           />
           <AlbumTest
-            image="/src/assets/covers/MerDeNoms-APerfectCircle.jpg"
+            image="/covers/MerDeNoms-APerfectCircle.jpg"
             song="3 Libras"
             artist="A Perfect Circle"
             year="2000"
