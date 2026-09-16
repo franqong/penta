@@ -38,7 +38,7 @@ Penta is being built with a modern and robust technology stack:
 *   **Frontend:** [React](https://react.dev/) and [Vite](https://vitejs.dev/)
 *   **Backend:** A [Node.js](https://nodejs.org/) backend is currently under development to support our growing list of features.
 
----
+##
 
 We are excited to build a community where music can be explored and celebrated. Welcome to Penta!
 
