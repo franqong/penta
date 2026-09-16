@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { VinylIcon } from "../../ui/icons";
+import "./AlbumCard.css";
 
 function AlbumCard({ image, song, artist, year, deezerId, onPlay }) {
   const navigate = useNavigate();
@@ -25,11 +26,11 @@ function AlbumCard({ image, song, artist, year, deezerId, onPlay }) {
       <div className="album-player">
         <button 
           className="mini-btn-play" 
-          onClick={() => onPlay({ image, song, artist, deezerId })}
+          aria-label={`Listen to ${song}`}
+          onClick={() => onPlay?.({ image, song, artist, deezerId })}
         >
-          ▶
+          LISTEN
         </button>
-        <button className="mini-btn-options">⋮</button>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import "./Songs.css";
-import AlbumTest from "../components/features/Album/AlbumTest.jsx";
+import AlbumCard from "../components/features/Album/AlbumCard.jsx";
 import { Link } from "react-router-dom";
 
 function SongsPage({ onPlayTrack }) {
@@ -10,7 +10,7 @@ function SongsPage({ onPlayTrack }) {
       <div className="songs-section">
         <h2>Songs of the Week</h2>
         <div className="songs-covers-grid">
-          <AlbumTest
+          <AlbumCard
             image="/covers/SilverSideUp-Nickelback.jpg"
             song="How You Remind Me"
             artist="Nickelback"
@@ -18,7 +18,7 @@ function SongsPage({ onPlayTrack }) {
             deezerId="810179"
             onPlay={onPlayTrack}
           />
-          <AlbumTest
+          <AlbumCard
             image="/covers/Core-StoneTemplePilots.jpg"
             song="Plush"
             artist="Stone Temple Pilots"
@@ -26,7 +26,7 @@ function SongsPage({ onPlayTrack }) {
             deezerId="2794367"
             onPlay={onPlayTrack}
           />
-          <AlbumTest
+          <AlbumCard
             image="/covers/HybridTheory-LinkinPark.jpg"
             song="In the End"
             artist="Linkin Park"
@@ -34,7 +34,7 @@ function SongsPage({ onPlayTrack }) {
             deezerId="676183"
             onPlay={onPlayTrack}
           />
-          <AlbumTest
+          <AlbumCard
             image="/covers/10000Days-Tool.jpg"
             song="The Pot"
             artist="Tool"
@@ -42,7 +42,7 @@ function SongsPage({ onPlayTrack }) {
             deezerId="722078382"
             onPlay={onPlayTrack}
           />
-          <AlbumTest
+          <AlbumCard
             image="/covers/MerDeNoms-APerfectCircle.jpg"
             song="3 Libras"
             artist="A Perfect Circle"
