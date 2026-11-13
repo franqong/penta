@@ -10,10 +10,10 @@ else
   rustup target add wasm32-unknown-unknown
 fi
 
-echo "==> [2/3] Instalando binario precompilado de Trunk..."
+echo "==> [2/3] Instalando binario estatico (musl) de Trunk..."
 if ! command -v trunk >/dev/null 2>&1; then
   mkdir -p "$HOME/.cargo/bin"
-  curl -sL https://github.com/trunk-rs/trunk/releases/latest/download/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf - -C "$HOME/.cargo/bin"
+  curl -sL https://github.com/trunk-rs/trunk/releases/latest/download/trunk-x86_64-unknown-linux-musl.tar.gz | tar -xzf - -C "$HOME/.cargo/bin"
   chmod +x "$HOME/.cargo/bin/trunk"
 fi
 
