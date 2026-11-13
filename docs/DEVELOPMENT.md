@@ -71,19 +71,34 @@ PostgreSQL, las sesiones y la lógica del servidor no se compilan a WASM.
 
 ## Producción
 
-Compilar el frontend:
+Compilar el frontend localmente:
 
 ```bash
 cd frontend
 trunk build --release
 ```
 
-Esto genera los archivos estáticos que pueden desplegarse en un servidor web.
+Esto genera los archivos estáticos que pueden desplegarse en un servidor web (`frontend/dist/`).
 El backend se compila por separado:
 
 ```bash
 cargo build --release -p penta-backend
 ```
+
+### Despliegue del Frontend en Vercel
+
+El frontend WebAssembly de Leptos se despliega en Vercel como sitio estático SPA utilizando `vercel.json` y el script de build `vercel-build.sh`.
+
+#### Configuración en el panel de Vercel:
+1. **Framework Preset**: `Other`.
+2. **Root Directory**: `./` (la raíz del repositorio). **No** cambiarlo a `frontend/`, ya que Cargo necesita acceder al workspace (`Cargo.toml` raíz) para compilar las dependencias.
+3. **Build & Development Settings**: Dejar la configuración por defecto para que Vercel utilice las directivas definidas en `vercel.json`:
+   - **Build Command**: `bash vercel-build.sh`
+   - **Output Directory**: `frontend/dist`
+   - **Install Command**: vacío (deshabilitado, la instalación de Rust y Trunk se realiza dentro de `vercel-build.sh`)
+
+#### Optimización del build en Vercel:
+A diferencia del entorno local (donde se compila Trunk una sola vez con Cargo), en Vercel el script `vercel-build.sh` descarga el binario precompilado oficial de Trunk en segundos en lugar de compilarlo desde el código fuente (`cargo install trunk`), evitando tiempos de espera excesivos y límites de memoria del contenedor.
 
 En resumen, Cargo compila Rust de forma incremental, Trunk automatiza la
 compilación del frontend hacia WASM y el backend continúa siendo un binario
