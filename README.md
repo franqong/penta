@@ -1,15 +1,15 @@
 <!--
 <h1 align="left">
-  <img src="frontend/public/assets/main/fav-dark.svg" width="30" height="30" style="vertical-align: middle;">
+  <img src="frontend/assets/main/fav-dark.svg" width="30" height="30" style="vertical-align: middle;">
   Penta
 </h1>
 -->
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="frontend/public/assets/main/penta.svg">
-    <source media="(prefers-color-scheme: light)" srcset="frontend/public/assets/main/penta-light.svg">
-    <img src="frontend/public/assets/main/penta-light.svg" width="200" alt="Penta">
+    <source media="(prefers-color-scheme: dark)" srcset="frontend/assets/main/penta.svg">
+    <source media="(prefers-color-scheme: light)" srcset="frontend/assets/main/penta-light.svg">
+    <img src="frontend/assets/main/penta-light.svg" width="200" alt="Penta">
   </picture>
 </p>
 
@@ -33,14 +33,25 @@ Penta aims to grow into a comprehensive cultural hub. We plan to introduce curat
 
 ## Technology Stack
 
-Penta is being built with a modern and robust technology stack:
+Penta uses a Rust-first application stack:
 
-*   **Frontend:** [React](https://react.dev/) and [Vite](https://vitejs.dev/)
-*   **Backend:** A [Node.js](https://nodejs.org/) backend is currently under development to support our growing list of features.
+*   **Frontend:** Rust, Leptos and WebAssembly in `frontend/`.
+*   **Backend:** Rust, Axum and Tokio in `backend/`.
+*   **Database target:** PostgreSQL accessed through SQLx as the backend
+    integration is expanded.
+*   **Shared contracts:** Rust DTOs in `crates/penta-contracts/`.
 
 ##
 
 We are excited to build a community where music can be explored and celebrated. Welcome to Penta!
+
+## Migration
+
+The application has been reorganized around the Rust implementation. The
+previous React/Vite and Node/Express/Prisma implementation is preserved in
+Git history as the visual and behavioral reference for the migration. See
+[`docs/MIGRATION.md`](docs/MIGRATION.md) for the old and new structures,
+technology decisions and remaining work.
 
 ## Copyright & License
 
